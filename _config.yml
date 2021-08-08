@@ -87,11 +87,11 @@ author:
   name             : "Sriram S K"
   avatar           : "profile.jpg"
   bio              : "Associate Software Engineer @ Nextuple | Research Assistant @ IIITD-MIDAS"
-  location         : "Bengaluru, Karnataka, India"
+  location         :
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
-  email            :
+  email            : "mailto:sriramsk1999@gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -106,7 +106,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "http://linkedin.com/sriramsk"
+  linkedin         : "sriramsk"
   orcid            : # "http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
