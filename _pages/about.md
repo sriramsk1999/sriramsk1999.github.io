@@ -12,6 +12,6 @@ I am an Associate Software Engineer at [**Nextuple**](https://www.nextuple.com/)
 
 While my research interests are still nascent, broadly speaking, I am interested in the design, development and most importantly, enhancement of ML systems, exploring their limits and improving upon them. Over the course of my undergraduate degree and accompanying internships, I have worked in varied domains from genetically trained neural networks to gesture recognition systems, each bringing its own challenges and learning. 
 
-[**CV**](files/resume.pdf)
+[**Resume**](files/resume.pdf)
 
 Feel free to [**contact me**](mailto:sriramsk1999@gmail.com) if you'd like to chat! :wave: 
