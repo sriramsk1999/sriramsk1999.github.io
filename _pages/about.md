@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-> A man's reach should exceed his grasp, or what are the heavens for?
+> **A man's reach should exceed his grasp, or what are the heavens for?**
 
 I am an Associate Software Engineer at [**Nextuple**](https://www.nextuple.com/), working on building Nextuple's Machine Learning platform. I am also a Research Assistant at the [**MIDAS lab in IIIT-Delhi**](http://midas.iiitd.edu.in/), where I am currently working on keyphrase extraction and event detection to extract the main events in news articles. I completed my B.Tech in Computer Science and Engineering from PES University in June 2021 with a specialization in Data Science.
 
