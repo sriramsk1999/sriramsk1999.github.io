@@ -1,7 +1,7 @@
 ---
 title: 'Multilingual Abusive Comment Detection in Indic Languages - Thoughts and Progress'
-date: 2020-11-28
-permalink: /posts/2020/11/gestop/
+date: 2021-10-15
+permalink: /posts/2021/10/moj-abusive-detection/
 tags:
   - sharechat
   - kaggle
@@ -14,7 +14,7 @@ On my submission for the [**Moj Multilingual Abusive Comment Identification - Ch
 
 I came across the [workshop/competition on Linkedin](https://www.linkedin.com/posts/ramit-sawhney_research-datascience-ai-activity-6836187394518126592-ISdZ) in late Aug 2021. What grabbed my interest was the chance to get some hands-on NLP experience, something I've been meaning to do for a while now. What cinched my interest was the fact that the top performing teams get the chance to interview at ShareChat. While I had no illusions of coming close to winning, the opportunity was too good to pass up.
 
-**In this post, I’ll be describing my approach towards the problem, the augmentations which got me the dubious distinction of being 11th on the leaderboard (Oct 15 2021). Code is available on [github](https://github.com/sriramsk1999/moj-abusive-detection)**
+**In this post, I’ll be describing my approach towards the problem, the augmentations which got me the dubious distinction of being 11th on the leaderboard (Oct 15 2021). Code is available on [GitHub](https://github.com/sriramsk1999/moj-abusive-detection)**
 
 ![Kaggle Leaderboard](/images/moj-abusive-detection/leaderboard.png "Leaderboard")
 
@@ -25,7 +25,7 @@ The **Moj Multilingual Abusive Comment Identification - Challenge** is a competi
 
 Positions on the leaderboard are determined by the F1 score of the submission, weighting both precision and recall. In this context, low precision would cause additional work for human moderators who would have to correct wrong predictions, or cause accounts to be punished unfairly if the process is automated. On the other hand, low recall would mean that the abusive comments are running wild, so to speak. Both undesirable outcomes to say the least. As can be seen on the leaderboard, competition is *fierce*, with a couple of percentage points separating the top performers from the 15th(!), with about a 1000 submissions between them. And with that introduction, let's dive into what **I** did.
 
-1. MuRIL + demoji [F1 -> 87.701]
+MuRIL + demoji [F1 -> 87.701]
 ======
 
 Fortunately for me, a starting point was very clearly laid out. Thanks to [Harveen's notebook](https://www.kaggle.com/harveenchadha/iiitd-muril-hf-tf-w-b-baseline), I had access to a high level Exploratory Data Analysis (EDA), code with the `huggingface transformers` library which I was new to, a tokenization pipeline, and some baseline results to compare my own implementation against. 
@@ -34,7 +34,7 @@ It wouldn't be much of a learning experience if I used the same code, and my fra
 
 The model used was [MuRIL](https://arxiv.org/abs/2103.10730), a BERT-based model trained on indic languages *only*. It has been trained on corpora of 16 indic languages (including Hindi, Kannada and even Sanskrit!), and English. Furthermore, a factor which elevates MuRIL above other models is the fact that its training corpus was augmented with *transliterated* data, which is very apt for this scenario. Multilingual speakers often exhibit a phenomenon known as [code-switching/mixing](https://en.wikipedia.org/wiki/Code-switching), where they combine multiple languages when conversing with each other. This is of course very common in India, even garnering names such as Hinglish, Kanglish etc. In text, there is also *script-mixing*, when the scripts of different languages are combined (Devanagari for the Indic languages and Roman for English). Opening a few family WhatsApp groups should be enough to convince the readers that Indian text is both code-mixed and script-mixed in nature. For illustration, consider the following sentence, a battle-cry of Kannadiga cricket fans:
 
-> ಈ ಸಲ cup namde :first_place: (This time, the cup is ours)
+> ಈ ಸಲ cup namde 🏆 (This time, the cup is ours)
 
 Slightly contrived perhaps, but this text includes elements written in Kannada in the Devanagari script, English, code-switched Kannada and an emoji to boot. For a machine learning system to moderate the language of the common man, it must understand the language of the common man in all its code-switched, script-mixed, emoji-filled glory. Which brings me to the second augmentation of my first attempt, handling emojis. In another [notebook by Harveen](https://www.kaggle.com/harveenchadha/tokenize-train-data-using-bert-tokenizer), he mentions that mostly emojis are not known to the tokenizer, which makes sense as MuRIL has been trained on data extracted from [CommonCrawl](https://commoncrawl.org/) and Wikipedia, not likely to be rich sources of emojis. Emojis however, can be indicators of abusive comments. For a crude example, I have a hunch that :eggplant: would have a strong correlation with abusive comments.
 
@@ -64,7 +64,7 @@ At this point, while I had ideas I wanted to explore (more on that below), I did
 There are many ways of ensembling models, varying in complexity leading up to a meta-learner trained on the predictions of other models. I stuck with the most basic form of an ensemble, **voting**. Every model is given equal weight, and the mode of their predictions is taken as the final prediction. There are of course numerous problems with voting, mainly that every model is given equal weight and is implicitly assumed to be equally qualified.
 
 > “The best argument against Democracy is a five-minute conversation with the average voter.”
-> - (falsely attributed to) Winston Churchill 
+> -- (falsely attributed to) Winston Churchill 
 
 The additional models in consideration were `mBERT` and `indicBERT`, both BERT-based models. mBERT or multilingual BERT is trained on the 104 largest languages by Wikipedia size, whereas indicBERT has been trained on a specially gathered indic language corpus by the folks at [indicNLP](https://indicnlp.ai4bharat.org/home/). In training, they performed slightly worse than MuRIL, bolstering my decision to go ahead with the voting ensemble, rather than a more complicated meta-learner. The ensemble did surprisingly well, compared to the effort that went into creating it.
 
