@@ -5,7 +5,7 @@ permalink:
 excerpt: 
 date: 2019-11-23
 venue: 'MMLA 2019'
-paperurl: 
+paperurl: https://arxiv.org/pdf/2010.05494
 citation: '<b>Krishna, Sriram</b> & Pentapati, Niharika. MMLA 2019. COMMUNICATIONS IN COMPUTER AND INFORMATION SCIENCE, VOL 1290. SPRINGER'
 ---
 The search for life outside the Solar System is an endeavour
@@ -23,4 +23,3 @@ Function is formulated as a bi-objective as well as a single objective
 optimization problem to find the optimal values to maximize the Cobb-
 Douglas Habitability Score for a set of promising exoplanets.
 
-[Link](https://arxiv.org/pdf/2010.05494.pdf)

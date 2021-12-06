@@ -1,0 +1,12 @@
+---
+title: "Using Sampling to Estimate and Improve Performance of Automated Scoring Systems with Guarantees"
+collection: publications
+permalink: 
+excerpt: 
+date: 2021-11-13
+venue: 'The 12th Symposium on Educational Advances in Artificial Intelligence (EAAI-AAAI22) (in proceedings)'
+paperurl: https://arxiv.org/abs/2111.08906
+citation: 'Singla, Y. K., <b>Krishna, S.</b>, Shah, R. R., & Chen, C. (2021). Using Sampling to Estimate and Improve Performance of Automated Scoring Systems with Guarantees. arXiv preprint arXiv:2111.08906.'
+---
+
+Automated Scoring (AS), the natural language processing task of scoring essays and speeches in an educational testing setting, is growing in popularity and being deployed across contexts from government examinations to companies providing language proficiency services. However, existing systems either forgo human raters entirely, thus harming the reliability of the test, or score every response by both human and machine thereby increasing costs. We target the spectrum of possible solutions in between, making use of both humans and machines to provide a higher quality test while keeping costs reasonable to democratize access to AS. In this work, we propose a combination of the existing paradigms, sampling responses to be scored by humans intelligently. We propose reward sampling and observe significant gains in accuracy (19.80% increase on average) and quadratic weighted kappa (QWK) (25.60% on average) with a relatively small human budget (30% samples) using our proposed sampling. The accuracy increase observed using standard random and importance sampling baselines are 8.6% and 12.2% respectively. Furthermore, we demonstrate the system's model agnostic nature by measuring its performance on a variety of models currently deployed in an AS setting as well as pseudo models. Finally, we propose an algorithm to estimate the accuracy/QWK with statistical guarantees (Our code is available at [this https URL](https://github.com/midas-research/Improvement-and-Estimation-of-Automated-Scoring-Systems-Performance-with-Guarantees)).
