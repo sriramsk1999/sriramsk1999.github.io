@@ -26,7 +26,6 @@ But for the ringing
 Of metal on metal.  
 I make my way towards the pleasant din.  
 
-
 At the center of town  
 Under and around a massive tree  
 Stands a mountain of a man.  
@@ -75,11 +74,11 @@ A joke wrapped into a poem delivered in a quick and punchy way. What's not to lo
 
 ---
 
-There was once a talking table,
-Made entirely of maple.
-All around him were burning,
-Blazing and struck by lightning,
-"Oh shit! I'm on the Tower of Babel."
+There was once a talking table,  
+Made entirely of maple.  
+All around him were burning,  
+Blazing and struck by lightning,  
+"Oh shit! I'm on the Tower of Babel."  
 
 The Harbinger
 ======
@@ -88,55 +87,55 @@ The Harbinger
 
 ---
 
-The Sun sets o'er the rolling fields 
-Of waving wheat and curling corn. 
-Men go back to their waiting wives, 
-Laughing children and a bottle of wine. 
-To gather ‘round the hearth 
-And tell their tales 
-Of mighty mystics, wise old men 
-Witty jesters, and a dragon's den.
+The Sun sets o'er the rolling fields  
+Of waving wheat and curling corn.  
+Men go back to their waiting wives,  
+Laughing children and a bottle of wine.  
+To gather ‘round the hearth  
+And tell their tales  
+Of mighty mystics, wise old men  
+Witty jesters, and a dragon's den.  
 
-The Harbinger hears them and smiles, 
-As he tap-taps his way into town. 
-A wise old man is he, 
-But beneath the veneer of wisdom 
-Lies a heart as black as soot. 
+The Harbinger hears them and smiles,  
+As he tap-taps his way into town.  
+A wise old man is he,  
+But beneath the veneer of wisdom  
+Lies a heart as black as soot.  
 
-He sees the future with a measured gaze, 
-Hawk-eyed, watching. 
-The infinite ramifications of every action, 
-And their worst possible consequence. 
+He sees the future with a measured gaze,  
+Hawk-eyed, watching.  
+The infinite ramifications of every action,  
+And their worst possible consequence.  
 
-He guides all towards their doom, 
-With twisted words and a gentle smile. 
-His cloak foreboding, his staff a death knell 
-To all that hear it. 
+He guides all towards their doom,  
+With twisted words and a gentle smile.  
+His cloak foreboding, his staff a death knell  
+To all that hear it.  
 
-He limps into the crowd of people, 
-The flaming firelight flickering 
-On his robes flaked with dust. 
-Casting serpentine shadows of dread. 
+He limps into the crowd of people,  
+The flaming firelight flickering  
+On his robes flaked with dust.  
+Casting serpentine shadows of dread.  
 
-A woman speaks up, 
-“Welcome traveller, rest your weary feet in our humble town. “
-The Harbinger does naught, 
-He stays still as a standing stone. 
+A woman speaks up,  
+“Welcome traveller, rest your weary feet in our humble town.“  
+The Harbinger does naught,  
+He stays still as a standing stone.  
 
-At length he begins to speak 
-And quiets the townsfolk's rambling. 
-Words of uncanny wisdom 
-Fly like arrows from his mouth, 
-Shafts of lies, feathered with truth. 
+At length he begins to speak  
+And quiets the townsfolk's rambling.  
+Words of uncanny wisdom  
+Fly like arrows from his mouth,  
+Shafts of lies, feathered with truth.  
 
-Silence prevails 
-As The Harbinger journeys on. 
+Silence prevails  
+As The Harbinger journeys on.  
 
-He leaves behind a shattered town. 
-Broken spirit and broken soul. 
-And I look upon this wreck of life 
-Wonder at the monstrosity that is 
-**The Harbinger.** 
+He leaves behind a shattered town.  
+Broken spirit and broken soul.  
+And I look upon this wreck of life  
+Wonder at the monstrosity that is  
+**The Harbinger.**  
 
 The Maelstrom
 ======
@@ -145,26 +144,26 @@ If I remember correctly, this poem was an entry for a school competition, where 
 
 ---
 
-Nature’s Fury unleash’d,
-That is the visage of the storm.
-Devastating power released,
-In a tempestual Maelstrom.
-Crackling lightning, rumbling thunder
-The needle-like unrelenting rain.
-Led by warriors of ice who plunder
-On their campaign for everlasting fame.
-Demonic winds burst asunder
-From their home in the heavenly sky.
-To the terror, awe and wonder
-Of the creatures as they die.
-Nature’s Fury united,
-That is the visage of the storm.
-The kingdom of Man subjugated,
-Under His Majesty, **The Maelstrom.**
+Nature’s Fury unleash’d,  
+That is the visage of the storm.  
+Devastating power released,  
+In a tempestual Maelstrom.  
+Crackling lightning, rumbling thunder  
+The needle-like unrelenting rain.  
+Led by warriors of ice who plunder  
+On their campaign for everlasting fame.  
+Demonic winds burst asunder  
+From their home in the heavenly sky.  
+To the terror, awe and wonder  
+Of the creatures as they die.  
+Nature’s Fury united,  
+That is the visage of the storm.  
+The kingdom of Man subjugated,  
+Under His Majesty, **The Maelstrom.**  
 
 The Moon
 ======
 
-Jewel of the night,
-Shines bright yet averts her eyes.
-**Scarred, but beautiful.**
+Jewel of the night,  
+Shines bright yet averts her eyes.  
+**Scarred, but beautiful.**  
