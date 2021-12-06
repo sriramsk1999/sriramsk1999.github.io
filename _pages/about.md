@@ -17,3 +17,9 @@ While my research interests are still nascent, broadly speaking, I am interested
 [**Resume**](files/resume.pdf)
 
 Feel free to [**contact me**](mailto:sriramsk1999@gmail.com) if you'd like to chat! :wave: 
+
+News
+======
+
+- **[Nov 2021]** - Our paper, [**Using Sampling to Estimate and Improve Performance of Automated Scoring Systems with Guarantees**](https://arxiv.org/abs/2111.08906) has been accepted at EAAI-AAAI 2022!
+- **[Jun 2021]** - Joined [MIDAS](http://midas.iiitd.edu.in/) as a part time Research Assistant, working with [Yaman Kumar Singla](https://sites.google.com/view/yaman-kumar/home)
