@@ -90,7 +90,7 @@ author:
   location         :
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : #"http://yourfullgooglescholarurl.com"
+  googlescholar    : https://scholar.google.com/citations?user=4eN3g0YAAAAJ&hl=en
   email            : "sriramsk1999@gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -113,7 +113,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          :
+  twitter          : "sriramsk99"
   vine             :
   weibo            :
   xing             :
