@@ -66,6 +66,7 @@ He fixes me with his steely eyes and says,
 And so are You.”  
 And he hands me his Hammer.  
 
+---
 
 A Talking Table
 ======
@@ -79,6 +80,8 @@ Made entirely of maple.
 All around him were burning,  
 Blazing and struck by lightning,  
 "Oh shit! I'm on the Tower of Babel."  
+
+---
 
 The Harbinger
 ======
@@ -137,6 +140,8 @@ And I look upon this wreck of life
 Wonder at the monstrosity that is  
 **The Harbinger.**  
 
+---
+
 The Maelstrom
 ======
 
@@ -160,6 +165,8 @@ Nature’s Fury united,
 That is the visage of the storm.  
 The kingdom of Man subjugated,  
 Under His Majesty, **The Maelstrom.**  
+
+---
 
 The Moon
 ======
