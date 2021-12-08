@@ -1,6 +1,6 @@
 ---
 title: 'Bringing humans into the loop in Automated Scoring'
-date: 2020-12-08
+date: 2021-12-08
 permalink: /posts/2021/12/human-loop-aes/
 tags:
   - midas
@@ -16,13 +16,13 @@ Introduction
 
 Automated Scoring is the task of scoring unstructured responses to open-ended questions, such as essays or speeches. Automated Scoring systems are behind all the popular language proficiency tests of today such as **ETS' TOEFL** or **Duolingo's DET**. These systems have come a long way since their initial iteration by [Ellis Page](https://en.wikipedia.org/wiki/Ellis_Batten_Page) way back in 1967. What makes Automated Scoring Systems attractive?
 
-- Low costs - A model is inherently scalable and can score perhaps hundreds of essays in the time it takes a (costly) human rater to score one.
-- Uniform scoring - Automated Scoring Systems can apply grading rubrics uniformly across responses, without being disrupted by human concepts like 'breaks'. **While model bias and interpretability are actively researched topics and far from solved, the promise of uniform scoring remains.**
+- **Low costs** - A model is inherently scalable and can score perhaps hundreds of essays in the time it takes a (costly) human rater to score one.
+- **Uniform scoring** - Automated Scoring Systems can apply grading rubrics uniformly across responses, without being disrupted by human concepts like 'breaks'. While model bias and interpretability are actively researched topics and far from solved, the promise of uniform scoring remains.
 
 These factors among others have fueled the popularity of AS systems, commanding a market of 110 billion (!) USD, and being adopted even by [governmental institutions](https://www.cleveland.com/metro/2018/03/computers_are_now_grading_essays_on_ohios_state_tests_your_ch.html). 
 
-![Robot scorer](/images/human-loop-aes/robot-scorer.jpg "Robot Scorer")
-*Your teacher is incredibly happy with your essay, though it may be hard for you to tell. Source:[NCIEA](https://www.nciea.org/blog/essa/balancing-skepticism-and-utility-machine-scoring)*
+![Robot scorer](/images/human-loop-aes/robot-teacher.jpg "Robot Scorer")
+*Your teacher is incredibly happy with your essay, though it may be hard for you to tell. Source : [NCIEA](https://www.nciea.org/blog/essa/balancing-skepticism-and-utility-machine-scoring)*
 
 Nevertheless, the meteoric rise has not been without criticism. One of the most damning criticisms comes from Perelman's aptly named [The Basic Automatic B.S. Essay Language Generator](https://lesperelman.com/writing-assessment-robo-grading/babel-generator/) which achieved perfect scores on ETS' system with gibberish prose. There's a long way to go, but the advantages are undeniable, making it an important research area.
 
@@ -30,7 +30,7 @@ Current AS systems are of two varieties:
 - Double Scoring - The TOEFL exam scores every response by both a human and an AS system with a second human rater to resolve disagreements. This means that there is *atleast* one human rater per response, which can be seen from the TOEFL's high price. 
 - Machine-only Scoring: On the other hand lie tests like the Duolingo English Test (DET), scored completely automatically. reducing costs but also reducing the reliability of the test. Of course, DET costs only 49 USD, less than one-fourth of what the TOEFL costs! 
 
-![Types of AS](/images/human-loop-aes/types_of_as.jpg "Types of AS")
+![Types of AS](/images/human-loop-aes/types_of_as.png "Types of AS")
 *All the tests shown in the figure except Pearson PTE are priced around the same.*
 
 Now, we're faced with two problems:
@@ -61,12 +61,12 @@ Our problem is straightforward: **How do we find where our model is likely to as
 Uncertainty Sampling
 ----
 
-We compute a *human-machine agreement matrix* on historical data, which encodes the agreement of a human rater with the machine for each grade. The figure below shows the same for the 6 grades part of our dataset, from A2 (beginner) to C1 (advanced). Each entry indicates the probability of the class predicted by the machine aligning with the class labeled by the human. `m(High B1)(High B1) = 0.95`, which means that the machine is correct 95% of the time when it assigns the grade `High B1`. A very poor candidate for sampling we ought to avoid.
+We compute a *human-machine agreement matrix* on historical data, which encodes the agreement of a human rater with the machine for each grade. The figure below shows the same for the 6 grades part of our dataset, from A2 (beginner) to C1 (advanced). Each entry indicates the probability of the class predicted by the machine aligning with the class labeled by the human. `m(High B1)(High B1) = 0.95`, which means that the machine is correct 95% of the time when it assigns the grade `High B1`. A very poor candidate for sampling which we ought to avoid.
 
-![System Diagram](/images/human-loop-aes/system_diagram.jpg "System diagram")
+![Humn Machine Agreement Matrix](/images/human-loop-aes/human_machine_matrix.png "Human Machine Agreement Matrix")
 *A human-machine agreement matrix, that is, a confusion matrix.*
 
-Uncertainty Sampling quantifies this concept and computes a value for each response, creating a probability distribution over which we can sample records more likely to be wrongly scored. To quantify the *uncertainty* of each class prediction, we make use of the Cross Entropy function. For e.g., the distribution associated with Low B1 in the matrix is `[0.0057, 0.61, 0.27, 0.11, 0.0029, 0]`. The ideal distribution that we want to see is `[0, 1, 0, 0, 0, 0]`, where the machine predicts the class Low B1 with 100% accuracy. The Cross Entropy function quantifies the *distance* between these two distributions allowing us to focus our sampling on specific classes.
+Uncertainty Sampling quantifies this concept and computes a value for each response, creating a probability distribution over which we can sample records more likely to be wrongly scored. To quantify the *uncertainty* of each class prediction, we make use of the Cross Entropy function. For e.g., the distribution associated with Low B1 in the matrix is `[0.0057, 0.61, 0.27, 0.11, 0.0029, 0]`. The ideal distribution that we want to see for Low B1 is `[0, 1, 0, 0, 0, 0]`, where the machine predicts the class Low B1 with 100% accuracy. The Cross Entropy function quantifies the *distance* between these two distributions allowing us to focus our sampling on specific classes.
 
 Reward Sampling
 ----
@@ -85,9 +85,10 @@ The `Low B1` grade, while wrong, is not *wrong enough* to change the final grade
 
 With that example, let's bring out the math and formalize Reward Sampling, where the expected reward $E_R$ is calculated as:
 
-$ E_R(d) = \sum_{c \in C} p(c \, | \, m)*reward(d, c) \;\; \forall d \in D $
+$E_R(d) = \sum_{c \in C} p(c \, \| \, m)*reward(d, c) \;\; \forall d \in D$
 
-Where $d$ represents one record in the dataset $D$, $c$ and $m$ represent classes in the set of all classes, $C, \; p(c \, | \, m)$ indicates the probability of the ground truth being class $c$ when machine has predicted class $m$, and the reward function is denoted as $reward$. The expected reward encodes the reward gained by the ground truth being $c$ when the machine has predicted $m$ weighted by the *probability* of the same, summed over every class $c$. $p(c \, | \, m)$ is looked up from the human-machine agreement matrix and the output of the reward function is weighted by this probability.
+Where $d$ represents one record in the dataset $D$, $c$ and $m$ represent classes in the set of all classes $C, \; p(c \, \| \, m)$ indicates the probability of the ground truth being class $c$ when machine has predicted class $m$, and the reward function is denoted as $reward$. The expected reward encodes the reward gained by the ground truth being $c$ when the machine has predicted $m$ weighted by the *probability* of the same, summed over every class $c$. $p(c \, \| \, m)$ is looked up from the human-machine agreement matrix and the output of the reward function is weighted by this probability.
+
 
 The reward function calculates the reward gained by swapping the predicted class with a different class. Taking the example above, in the case of X, changing the `Low B1` grade to the correct grade of `A2` has no impact on the final grade, which remains `A2`, hence incurring a reward of 0. On the other hand, in the case of Y, changing `C1` to `A2` would change the final grade to `A2`, incurring a reward of 2 (The final grade changes from `High B1` -> `Low B1` -> `A2`). Simply put, the reward is the absolute difference between the old grade and the new grade. In this manner, we calculate an expected reward for each response and further refine our targets for sampling.
 
@@ -100,7 +101,7 @@ In doing so, we make use of another (small) sample drawn for this purpose. Why a
 
 While we could use random sampling, the theme so far has been sampling efficiency :). [Previous work](https://arxiv.org/abs/2004.00827) has shown that sampling based on a model's *confidence* of prediction can be leveraged to provide better estimates. When we create a 95% confidence interval over this sample and take the lower bound of the estimate, we provide a statistical guarantee that the metrics of the model will not fall below this estimate 95% of all runs. The confidence of the model's prediction is proxied by $1-uncertainty$, which we already have from the human-machine agreement matrix. Thus, a secondary sample is drawn to provide a estimate with statistical guarantees.
 
-![System Diagram](/images/human-loop-aes/system_diagram.jpg "System diagram")
+![System Diagram](/images/human-loop-aes/system_diagram.png "System diagram")
 *Putting all the pieces together*
 
 Results
@@ -108,7 +109,7 @@ Results
 
 We tested our sampling methods across a number of models and varying sample sizes to see how accuracy and quadratic weighted kappa (QWK) change. (In the interest of brevity, full details about the model and dataset have been omitted. For that and to look at the pretty graphs in better resolution, have a look at the paper!) 
 
-![Result Graphs](/images/human-loop-aes/result-graphs.jpg "Result Graphs")
+![Result Graphs](/images/human-loop-aes/result-graphs.png "Result Graphs")
 *In each model, we show the change in accuracy (left) and quadratic weighted kappa (QWK) (right) after sampling
 with the sample size (human budget) shown on the x-axis. Reward sampling outperforms both uncertainty
 sampling and random sampling baseline in each model.*
