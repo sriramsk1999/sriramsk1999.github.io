@@ -37,8 +37,10 @@ Now, we're faced with two problems:
 1. **How do we make Automated Scoring Systems more reliable?** (Bring expert human scorers in, of course. They can correct the system when it's wrong.)
 2. **How do we make Automated Scoring Systems more accessible i.e. cheaper?** (Get rid of the humans, of course. We won't have to deal with pesky things like raises and inflation.)
 
-In our work, [Using Sampling to Estimate and Improve Performance of Automated Scoring Systems with Guarantees
-](https://arxiv.org/abs/2111.08906), accepted at EAAI-AAAI22, this is the exact problem we tackle. Existing systems go all-or-nothing with humans, and we attempt to get the best of both worlds using sampling techniques. In summary, our contributions are as follows:
+This is the exact problem we tackle in [Using Sampling to Estimate and Improve Performance of Automated Scoring Systems with Guarantees
+](https://arxiv.org/abs/2111.08906), our recent paper which has been accepted at the **Twelfth AAAI Symposium on Educational Advances in Artifical Intelligence (EAAI-22)**, held in conjunction with **AAAI-22**. Congratulations to my co-authors [Yaman Kumar Singla](https://sites.google.com/view/yaman-kumar/home), [Dr. Rajiv Ratn Shah from the MIDAS Lab](http://midas.iiitd.edu.in/) at IIIT-Delhi and [Dr. Changyou Chen](https://cse.buffalo.edu/~changyou/) from the University at Buffalo, State University of New York!
+
+Existing systems go all-or-nothing with humans, and we attempt to get the best of both worlds using sampling techniques. In summary, our contributions are as follows:
 - Combine existing paradigms to integrate humans with Automated Scoring Systems *partially* by using humans to score some, but not all, of a given set of responses.
 - We conduct experiments on various models deployed in real world AS systems, and we observe significant gains in accuracy using our proposed model, **Reward Sampling**.
 - Improving the system's performance is a noble goal, but arguably more important is its reliability i.e. if it can perform well *consistently*. Thus, we also propose an algorithm to estimate the performance of the system with statistical guarantees.
