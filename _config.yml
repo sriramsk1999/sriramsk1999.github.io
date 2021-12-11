@@ -8,9 +8,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Sriram S K"
+title                    : "Sriram Krishna"
 title_separator          : "-"
-name                     : &name "Sriram S K"
+name                     : &name "Sriram Krishna"
 description              : &description "personal description"
 url                      : https://sriramsk1999.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -84,7 +84,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Sriram S K"
+  name             : "Sriram Krishna"
   avatar           : "profile.jpg"
   bio              : "Associate Software Engineer @ Nextuple | Research Assistant @ IIITD-MIDAS"
   location         :
