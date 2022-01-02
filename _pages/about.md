@@ -8,7 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-> **A man's reach should exceed his grasp, or what's a heaven for?** - Robert Browning
+<script src="quotes.js"></script>
+
 
 I am a Software Engineer at [**Samsung Research**](https://www.research.samsung.com/), working in the AR Vision Lab on 3D Scene Reconstruction and Spatial Mapping. I am also a Research Assistant at the [**MIDAS lab in IIIT-Delhi**](http://midas.iiitd.edu.in/), where I am currently working on keyphrase extraction and event detection to extract the main events in news articles. 
 
