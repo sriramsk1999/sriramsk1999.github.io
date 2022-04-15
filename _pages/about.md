@@ -11,7 +11,7 @@ redirect_from:
 <script src="quotes.js"></script>
 
 
-I am a Software Engineer at [**Samsung Research**](https://www.research.samsung.com/), working in the AR Vision Lab on 3D Scene Reconstruction and Spatial Mapping. I am also a Research Assistant at the [**MIDAS lab in IIIT-Delhi**](http://midas.iiitd.edu.in/), where I am currently working on keyphrase extraction and event detection to extract the main events in news articles. 
+I am a Software Engineer at [**Samsung Research**](https://www.research.samsung.com/), working in the AR Vision Lab on 3D Scene Reconstruction and Spatial Mapping. I am also a Research Assistant at the [**MIDAS lab in IIIT-Delhi**](http://midas.iiitd.edu.in/), where I am currently working on coherence modeling in text.
 
 Previously, I was an Associate Software Engineer at [**Nextuple**](https://www.nextuple.com/), where I built Nextuple's Machine Learning platform. I completed my B.Tech in Computer Science and Engineering from PES University in June 2021 with a specialization in Data Science.
 
