@@ -17,8 +17,6 @@ Previously, I was an Associate Software Engineer at [**Nextuple**](https://www.n
 
 My research interests are primarily in 3D Vision and understanding the world in 3D. I'm interested in figuring out how we can develop agents to perceive, understand and plan in the 3D world, without explicit supervision. In other words, I want to [build a cat.](https://twitter.com/ylecun/status/1622300311573651458?lang=en)
 
-[**Resume**](files/resume.pdf) (Out of date)
-
 Feel free to [**contact me**](mailto:sriramsk1999@gmail.com) if you'd like to chat! :wave: 
 
 News
