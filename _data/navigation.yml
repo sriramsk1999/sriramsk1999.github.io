@@ -8,8 +8,8 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "mlmonad"
-    url: /mlmonad/
+  # - title: "mlmonad"
+  #   url: /mlmonad/
 
   - title: "Blog"
     url: /blog/
