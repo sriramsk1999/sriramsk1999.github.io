@@ -86,12 +86,12 @@ analytics:
 author:
   name             : "Sriram Krishna"
   avatar           : "profile.jpg"
-  bio              : "Software Engineer @ Samsung Research | Research Assistant @ IIITD-MIDAS"
+  bio              : "MS Robotics @ CMU | Research Assistant @ R-PAD"
   location         :
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : https://scholar.google.com/citations?user=4eN3g0YAAAAJ&hl=en
-  email            : "sriramsk1999@gmail.com"
+  email            : "sskrishn@cs.cmu.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
