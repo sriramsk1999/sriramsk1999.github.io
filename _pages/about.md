@@ -11,11 +11,11 @@ redirect_from:
 <script src="quotes.js"></script>
 
 
-I am a Masters in Robotics student at [**The Robotics Institute @ Carnegie Mellon University**](https://www.ri.cmu.edu). I'm a member of the [**Robots Perceiving and Doing Lab (R-PAD)**](https://r-pad.github.io/), and advised by [Prof. David Held](https://davheld.github.io).
+I am a Masters in Robotics student at [**The Robotics Institute @ Carnegie Mellon University**](https://www.ri.cmu.edu). I'm a member of the [Robots Perceiving and Doing Lab (R-PAD)](https://r-pad.github.io/), and advised by [Prof. David Held](https://davheld.github.io).
 
-My research lies at the intersection of 3D Vision and Robot Manipulation. I'm interested in large-scale robot learning systems, that can learn representations _from_ diverse real-world data and can generalize _to_ similarly diverse real-world environments. In the longer run, I'd like to figure out how we can develop agents to perceive, understand and plan in the 3D world, without explicit supervision. In other words, I want to [build a cat.](https://twitter.com/ylecun/status/1622300311573651458?lang=en)
+My research lies at the intersection of 3D Vision and Robot Manipulation. I'm interested in large-scale robot learning systems, that can learn representations from diverse real-world data and can generalize to similarly diverse real-world environments. 
 
-Previously, I was a Software Engineer at [**Samsung Research**](https://www.research.samsung.com/), working in the AR Vision Lab on Depth Estimation and 3D Scene Reconstruction. Before which, I was an Associate Software Engineer at [**Nextuple**](https://www.nextuple.com/), where I worked on setting up Nextuple's Machine Learning platform. I also spent a period of time as a Research Assistant at the [**MIDAS lab in IIIT-Delhi**](http://midas.iiitd.ac.in/). I completed my B.Tech in Computer Science and Engineering from PES University in 2021 with a specialization in Data Science.
+Previously, I was a Software Engineer at [Samsung Research](https://www.research.samsung.com/), where I worked on Depth Estimation and 3D Scene Reconstruction. Prior to this, I was an Associate Software Engineer at [Nextuple](https://www.nextuple.com/), where helped set up Nextuple's Machine Learning platform. I also spent a period of time as a Research Assistant at the [MIDAS lab in IIIT-Delhi](http://midas.iiitd.ac.in/). I completed my B.Tech in Computer Science and Engineering from [PES University](https://pes.edu/) in 2021 with a specialization in Data Science.
 
 Feel free to [**contact me**](mailto:sskrishn@cs.cmu.edu) if you'd like to chat! :wave: 
 
