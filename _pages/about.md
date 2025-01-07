@@ -15,7 +15,7 @@ I am a Masters in Robotics student at [**The Robotics Institute @ Carnegie Mello
 
 My research lies at the intersection of 3D Vision and Robot Manipulation. I'm interested in large-scale robot learning systems, that can learn representations from diverse real-world data and can generalize to similarly diverse real-world environments. 
 
-Previously, I was a Software Engineer at [Samsung Research](https://www.research.samsung.com/), where I worked on Depth Estimation and 3D Scene Reconstruction. Prior to this, I was an Associate Software Engineer at [Nextuple](https://www.nextuple.com/), where helped set up Nextuple's Machine Learning platform. I also spent a period of time as a Research Assistant at the [MIDAS lab in IIIT-Delhi](http://midas.iiitd.ac.in/). I completed my B.Tech in Computer Science and Engineering from [PES University](https://pes.edu/) in 2021 with a specialization in Data Science.
+Previously, I was a Software Engineer at [Samsung Research](https://www.research.samsung.com/), where I worked on Depth Estimation and 3D Scene Reconstruction. Prior to this, I was an Associate Software Engineer at [Nextuple](https://www.nextuple.com/), where I helped set up Nextuple's Machine Learning platform. I also spent a period of time as a Research Assistant at the [MIDAS lab in IIIT-Delhi](http://midas.iiitd.ac.in/). I completed my B.Tech in Computer Science and Engineering from [PES University](https://pes.edu/) in 2021 with a specialization in Data Science.
 
 Feel free to [**contact me**](mailto:sskrishn@cs.cmu.edu) if you'd like to chat! :wave: 
 
