@@ -7,5 +7,5 @@ date: 2021-11-13
 venue: The 12th Symposium on Educational Advances in Artificial Intelligence (EAAI-AAAI22)
 code: https://github.com/midas-research/Improvement-and-Estimation-of-Automated-Scoring-Systems-Performance-with-Guarantees
 paperurl: https://arxiv.org/abs/2111.08906
-authors: Yaman Kumar Singla*, <b>Sriram Krishna*</b>, Rajiv Ratn Shah, & Changyou Chen
+authors: <a href="https://sites.google.com/view/yaman-kumar/">Yaman Kumar Singla</a>*, <b>Sriram Krishna*</b>, <a href="https://midas.iiitd.ac.in/">Rajiv Ratn Shah</a>, & <a href="https://cse.buffalo.edu/~changyou/">Changyou Chen</a>
 ---

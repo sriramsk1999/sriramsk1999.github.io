@@ -7,5 +7,5 @@ date: 2021-04-06
 venue: International Conference on Advances in Electrical, Computing, Communication and Sustainable Technologies (ICAECT)
 paperurl: https://arxiv.org/abs/2012.15565
 code: https://github.com/sriramsk1999/video-database-search
-authors: <b>Sriram Krishna</b>, Siddarth Vinay & Srinivas Katharguppe
+authors: <b>Sriram Krishna</b>, <a href="https://www.linkedin.com/in/siddarth-vinay/">Siddarth Vinay</a> & <a href="https://www.linkedin.com/in/srinivas-katharguppe-subbaramaiah-a192522/">Srinivas Katharguppe</a>
 ---
