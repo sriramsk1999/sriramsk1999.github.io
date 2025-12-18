@@ -15,6 +15,8 @@ quotes = [
     ["The struggle itself towards the heights is enough to fill a man's heart. One must imagine Sisyphus happy.", "Albert Camus"],
     ["कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। <br>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥ २-४७<br><br> You have the right to work only but never to its fruits. <br> Let not the fruits of action be your motive, nor let your attachment be to inaction.", "Bhagavad Gita, Chapter 2, Verse: 47"],
     ["<a href='https://www.sefaria.org/sheets/49421.9?lang=bi&with=all&lang2=en'>This too shall pass</a>", "Persian Adage"],
+    ["No man ever steps in the same river twice, for it is not the same river and he is not the same man.", "Heraclitus"],
+    ["Talent is something you make bloom, instinct is something you polish.", "Oikawa Tōru"],
 ]
 
 quote = quotes[Math.floor(Math.random() * quotes.length)];
