@@ -14,7 +14,7 @@ Altruism is a noble quality. Placing the welfare and happiness of other beings a
 
 There are numerous viewpoints as to **why** we consider altruism a virtue. Without getting into too much detail, they try to explain that, counterintuitively, helping others at a cost to yourself may end up helping you in the long run. Perhaps this is true for small scale altruism, such as giving your neighbours some salt when they run out. However, the odds of anonymously paying for the medical costs of a child halfway across the world and benefiting from it are infinitesimally small.
 
-So let's set that aside that aspect of altruism for the sake of this post. Let us take for fact that altruism is a virtue and that we should strive to help others and do good in the short span of time we spend on this [Pale Blue Dot](https://www.planetary.org/worlds/pale-blue-dot). The question which then arises:
+So let's set aside that aspect of altruism for the sake of this post. Let us take for fact that altruism is a virtue and that we should strive to help others and do good in the short span of time we spend on this [Pale Blue Dot](https://www.planetary.org/worlds/pale-blue-dot). The question which then arises:
 
 How do we do the most good?
 ======

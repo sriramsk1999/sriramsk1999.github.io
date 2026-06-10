@@ -11,18 +11,17 @@ redirect_from:
 <script src="quotes.js"></script>
 
 
-I am a Masters in Robotics student at [**The Robotics Institute @ Carnegie Mellon University**](https://www.ri.cmu.edu). I'm a member of the [Robots Perceiving and Doing Lab (R-PAD)](https://r-pad.github.io/), and advised by [Prof. David Held](https://davheld.github.io).
+I am an incoming PhD student at [**The Robotics Institute @ Carnegie Mellon University**](https://www.ri.cmu.edu). My research lies at the intersection of Computer Vision and Robot Learning for Manipulation. I'm interested in building systems that extract useful information from messy real-world data, and in learning generalizable representations for dexterous manipulation that transfers across embodiments.
 
-My research lies at the intersection of Computer Vision and Robot Learning for Manipulation. I'm interested in building systems that can extract useful information from messy real-world data, and learning generalizable representations for manipulation that enable cross-embodiment transfer.
+Previously, I completed my Masters in Robotics at CMU, advised by [David Held](https://davheld.github.io). I was a Software Engineer at [Samsung Research](https://www.research.samsung.com/), where I worked on Depth Estimation and 3D Scene Reconstruction. I also spent a period of time as a Research Assistant at the [MIDAS lab in IIIT-Delhi](http://midas.iiitd.ac.in/). I completed my B.Tech in Computer Science and Engineering from [PES University](https://pes.edu/) in 2021 with a specialization in Data Science.
 
-Previously, I was a Software Engineer at [Samsung Research](https://www.research.samsung.com/), where I worked on Depth Estimation and 3D Scene Reconstruction. Prior to this, I was an Associate Software Engineer at [Nextuple](https://www.nextuple.com/), where I helped set up Nextuple's Machine Learning platform. I also spent a period of time as a Research Assistant at the [MIDAS lab in IIIT-Delhi](http://midas.iiitd.ac.in/). I completed my B.Tech in Computer Science and Engineering from [PES University](https://pes.edu/) in 2021 with a specialization in Data Science.
-
-Feel free to [**contact me**](mailto:sskrishn@cs.cmu.edu) if you'd like to chat! :wave: 
+Feel free to [**email me**](mailto:sskrishn@cs.cmu.edu)! :wave: I'm happy to chat about any and all topics, and if for some reason you'd like more of my time, you can bribe me with a donation: any amount, to a charity you believe in. ([why?](/posts/2023/08/effective-altruism/))
 
 News
 ======
 
-- **[Jun 2025]** - Our paper, [**BG-HOP: A Bimanual Generative Hand-Object Prior**](https://arxiv.org/abs/2506.09068) was accepted at the [Humans to Robots workshop](https://agents-in-interactions.github.io/) at CVPR 2025 
+- **[Apr 2026]** - Our paper, [**GHOST: Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation**](https://ghost-human-demo.github.io/) was accepted at RSS 2026!
+- **[Jun 2025]** - Our paper, [**BG-HOP: A Bimanual Generative Hand-Object Prior**](https://arxiv.org/abs/2506.09068) was accepted at the [Humans to Robots workshop](https://agents-in-interactions.github.io/) at CVPR 2025.
 - **[Aug 2024]** - Joined the MSR program at CMU!
 - **[Feb 2024]** - Our paper, [**Beyond Words: A Topological Exploration of Coherence in Text Documents**](https://openreview.net/pdf?id=QJxVhljAyS) was accepted at ICLR 2024 (Tiny Papers Track)!
 - **[Mar 2023]** - Our paper, [**DeepSmooth: Efficient and Smooth Depth Completion**](https://openaccess.thecvf.com/content/CVPR2023W/VOCVALC/html/Krishna_DeepSmooth_Efficient_and_Smooth_Depth_Completion_CVPRW_2023_paper.html) has been accepted at VOCVALC, a workshop at CVPR 2023!

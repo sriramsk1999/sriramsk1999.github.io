@@ -17,6 +17,7 @@ quotes = [
     ["<a href='https://www.sefaria.org/sheets/49421.9?lang=bi&with=all&lang2=en'>This too shall pass</a>", "Persian Adage"],
     ["No man ever steps in the same river twice, for it is not the same river and he is not the same man.", "Heraclitus"],
     ["Talent is something you make bloom, instinct is something you polish.", "Oikawa Tōru"],
+    ["We work in the dark - we do what we can - we give what we have. Our doubt is our passion, and our passion is our task. The rest is the madness of art.", "Henry James"]
 ]
 
 quote = quotes[Math.floor(Math.random() * quotes.length)];
