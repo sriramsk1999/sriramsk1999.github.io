@@ -1,12 +1,7 @@
-// Return random quote
+(function () {
+  "use strict";
 
-function formatQuote(quote, author) {
-    quote = quote.bold() + "<br> - " + author;
-    quote = "<blockquote>" + quote + "</blockquote>";
-    return quote;
-}
-
-quotes = [
+  var quotes = [
     ["Ah, but a man's reach should exceed his grasp, <br>Or what's a heaven for?", "Robert Browning"],
     ["The most important step a man can take. It's not the first one, is it? It's the next one. Always the next step, Dalinar.", "Dalinar Kholin"],
     ["It matters not how strait the gate, <br>How charged with punishments the scroll, <br>I am the master of my fate,<br>I am the captain of my soul.\n", "William Ernest Henley"],
@@ -18,9 +13,38 @@ quotes = [
     ["No man ever steps in the same river twice, for it is not the same river and he is not the same man.", "Heraclitus"],
     ["Talent is something you make bloom, instinct is something you polish.", "Oikawa Tōru"],
     ["We work in the dark - we do what we can - we give what we have. Our doubt is our passion, and our passion is our task. The rest is the madness of art.", "Henry James"]
-]
+  ];
 
-quote = quotes[Math.floor(Math.random() * quotes.length)];
-quote = formatQuote(quote[0], quote[1]);
+  function init() {
+    var container = document.getElementById("quote-widget");
+    if (!container) return;
 
-document.write(quote);
+    var lastIndex = -1;
+
+    function pickIndex() {
+      if (quotes.length === 1) return 0;
+      var i;
+      do { i = Math.floor(Math.random() * quotes.length); } while (i === lastIndex);
+      return i;
+    }
+
+    function render(index) {
+      lastIndex = index;
+      var quote = quotes[index];
+      container.innerHTML =
+        "<blockquote><b>" + quote[0] + "</b><br> - " + quote[1] + "</blockquote>" +
+        '<button type="button" class="btn btn--inverse btn--small quote-widget__next">Next quote &rarr;</button>';
+      container.querySelector(".quote-widget__next").addEventListener("click", function () {
+        render(pickIndex());
+      });
+    }
+
+    render(pickIndex());
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();

@@ -1,3 +1,9 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
+<script>
+  /* build-time-fetched title/description for external links, keyed by URL; see _scripts/fetch_link_metadata.rb */
+  window.GW_linkMetadata = {{ site.data['link-metadata'] | jsonify | replace: '</script>', '<\/script>' }};
+</script>
+<script src="{{ base_path }}/assets/js/popovers.js"></script>
+
 {% include analytics.html %}

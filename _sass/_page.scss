@@ -49,6 +49,8 @@
 }
 
 .page__content {
+  /* gwern-style narrow measure for prose readability, capped independent of the grid column width */
+  max-width: 44em;
 
   h2 {
     padding-bottom: 0.5em;
@@ -72,15 +74,75 @@
     }
   }
 
+  /* gwern-style link semantics: underline style encodes what a link does.
+     solid = ordinary link; dotted = annotated (popover shows a title/description preview) */
   a {
+    color: $link-color;
     text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 
     &:hover {
+      color: $link-color-hover;
       text-decoration: underline;
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
       }
+    }
+
+    &:visited {
+      color: $link-color-visited;
+    }
+
+    &.popover-annotated {
+      text-decoration-style: dotted;
+    }
+  }
+
+  /* drop cap on the opening paragraph, gwern-style */
+  > p:first-of-type::first-letter,
+  > .page__lead + p::first-letter {
+    float: left;
+    padding: 0.05em 0.05em 0 0;
+    font-family: $serif;
+    font-size: 3.4em;
+    line-height: 0.82;
+  }
+
+  /* footnotes (kramdown's default markup: sup > a.footnote, .footnotes > ol > li) —
+     intercepted by the popover engine, but styled here so they degrade gracefully without JS */
+  sup {
+    line-height: 0;
+  }
+
+  a.footnote {
+    padding: 0 0.15em;
+    font-family: $sans-serif;
+    font-size: 0.8em;
+    text-decoration: none;
+    border-bottom: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .footnotes {
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid $border-color;
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    color: $dark-gray;
+
+    li {
+      margin-bottom: 0.75em;
+    }
+
+    a.reversefootnote {
+      margin-left: 0.3em;
+      text-decoration: none;
     }
   }
 

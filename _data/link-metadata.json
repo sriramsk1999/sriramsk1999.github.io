@@ -1,0 +1,399 @@
+{
+  "http://disqus.com": {
+    "title": "#1 in audience engagement and community growth | Disqus",
+    "description": "More publishers trust us to engage, grow, and understand their audiences than any other. Build your on-site community with Disqus.",
+    "favicon": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-192x192.png"
+  },
+  "http://midas.iiitd.ac.in/": {
+    "title": "Google Drive: Sign-in",
+    "description": "Access Google Drive with a Google account (for personal use) or Google Workspace account (for business use)."
+  },
+  "http://nsurl.org/2019-2/tasks/task-10-low-level-nlp-tools-for-bhojpuri-language/": {
+    "title": "NS URL -",
+    "favicon": "https://nsurl.org/wp-content/uploads/2026/03/image-Photoroom-2026-03-01T110132.539-150x150.png"
+  },
+  "http://www.google.com/analytics/learn/privacy.html": {
+    "title": "Google Marketing Platform - Unified Advertising and Analytics",
+    "description": "Introducing Google Marketing Platform, a unified marketing and analytics platform for smarter marketing measurement and better results.",
+    "favicon": "https://www.gstatic.com/marketing-cms/assets/images/83/74/d103304f46b0916f801440c8f226/favicon-gmp.png"
+  },
+  "https://80000hours.org/": {
+    "title": "You have 80,000 hours in your career.",
+    "description": "This makes it your best opportunity to have a positive impact on the world. If you’re fortunate enough to be able to use your career for good, but aren’t sure how, we can help",
+    "favicon": "https://80000hours.org/favicon.ico"
+  },
+  "https://agents-in-interactions.github.io/": {
+    "title": "Agents in Interaction: From Humans to Robots [H2R]",
+    "description": "Workshop on Agents in Interaction, from Humans to Robots [H2R] — CVPR 2026, Denver, CO",
+    "favicon": "https://opensun3d.github.io/static/images/favicon.svg"
+  },
+  "https://ai4bharat.org/": {
+    "title": "AI4Bharat",
+    "description": "AI4Bharat is a research lab at IIT Madras which works on developing open-source datasets, tools, models and applications for Indian languages.",
+    "favicon": "https://ai4bharat.org/favicon.ico"
+  },
+  "https://arxiv.org/abs/1506.02142": {
+    "title": "Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning",
+    "description": "Deep learning tools have gained tremendous attention in applied machine learning. However such tools for regression and classification do not capture model uncertainty. In comparison, Bayesian models offer a mathematically grounded framework to reason about model uncertainty, but usually come with a",
+    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+  },
+  "https://arxiv.org/abs/2002.05709": {
+    "title": "A Simple Framework for Contrastive Learning of Visual Representations",
+    "description": "This paper presents SimCLR: a simple framework for contrastive learning of visual representations. We simplify recently proposed contrastive self-supervised learning algorithms without requiring specialized architectures or a memory bank. In order to understand what enables the contrastive predictio",
+    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+  },
+  "https://arxiv.org/abs/2004.00827": {
+    "title": "Approximate Selection with Guarantees using Proxies",
+    "description": "Due to the falling costs of data acquisition and storage, researchers and industry analysts often want to find all instances of rare events in large datasets. For instance, scientists can cheaply capture thousands of hours of video, but are limited by the need to manually inspect long videos to iden",
+    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+  },
+  "https://arxiv.org/abs/2103.10730": {
+    "title": "MuRIL: Multilingual Representations for Indian Languages",
+    "description": "India is a multilingual society with 1369 rationalized languages and dialects being spoken across the country (INDIA, 2011). Of these, the 22 scheduled languages have a staggering total of 1.17 billion speakers and 121 languages have more than 10,000 speakers (INDIA, 2011). India also has the second",
+    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+  },
+  "https://arxiv.org/abs/2109.14076": {
+    "title": "RAFT: A Real-World Few-Shot Text Classification Benchmark",
+    "description": "Large pre-trained language models have shown promise for few-shot learning, completing text-based tasks given only a few task-specific examples. Will models soon solve classification tasks that have so far been reserved for human research assistants? Existing benchmarks are not designed to measure p",
+    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+  },
+  "https://arxiv.org/abs/2111.08906": {
+    "title": "Using Sampling to Estimate and Improve Performance of Automated Scoring Systems with Guarantees",
+    "description": "Automated Scoring (AS), the natural language processing task of scoring essays and speeches in an educational testing setting, is growing in popularity and being deployed across contexts from government examinations to companies providing language proficiency services. However, existing systems eith",
+    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+  },
+  "https://arxiv.org/abs/2506.09068": {
+    "title": "BG-HOP: A Bimanual Generative Hand-Object Prior",
+    "description": "In this work, we present BG-HOP, a generative prior that seeks to model bimanual hand-object interactions in 3D. We address the challenge of limited bimanual interaction data by extending existing single-hand generative priors, demonstrating preliminary results in capturing the joint distribution of",
+    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+  },
+  "https://beisner.me/": {
+    "title": "Ben Eisner"
+  },
+  "https://commoncrawl.org/": {
+    "title": "Common Crawl - Open Repository of Web Crawl Data",
+    "description": "We build and maintain an open repository of web crawl data that can be accessed and analyzed by anyone.",
+    "favicon": "https://cdn.prod.website-files.com/6479b8d98bf5dcb4a69c4f31/648962712d8394e5aa35ead4_Common_Crawl_Rev3_LPX_White%20Icon%20(1).png"
+  },
+  "https://cse.buffalo.edu/~changyou/": {
+    "title": "Home ←"
+  },
+  "https://cset.georgetown.edu/publication/ai-and-the-future-of-disinformation-campaigns/": {
+    "title": "AI and the Future of Disinformation Campaigns | Center for Security and Emerging Technology",
+    "description": "Artificial intelligence offers enormous promise to advance progress, and powerful capabilities to disrupt it. This policy brief is the first installment of a series that examines how advances in AI could be exploited to enhance operations that automate disinformation. Introducing the RICHDATA framew",
+    "favicon": "https://cset.georgetown.edu/wp-content/themes/cset/images/favicon.ico"
+  },
+  "https://davheld.github.io": {
+    "title": "David Held"
+  },
+  "https://davheld.github.io/": {
+    "title": "David Held"
+  },
+  "https://dl.acm.org/doi/10.1145/37402.37422": {
+    "title": "Marching cubes: A high resolution 3D surface construction algorithm | ACM SIGGRAPH Computer Graphics",
+    "description": "We present a new algorithm, called marching cubes, that creates triangle models of constant density surfaces from 3D medical data. Using a divide-and-conquer approach to generate inter-slice connectivity, we create a case table that defines triangle ...",
+    "favicon": "https://dl.acm.org/pb-assets/head-metadata/favicon-32x32-1574252172003.png"
+  },
+  "https://docs.mathjax.org/en/latest/": {
+    "title": "MathJax Documentation — MathJax 4.0 documentation"
+  },
+  "https://en.wikipedia.org/wiki/Code-switching": {
+    "title": "Code-switching - Wikipedia",
+    "favicon": "https://en.wikipedia.org/static/favicon/wikipedia.ico"
+  },
+  "https://en.wikipedia.org/wiki/Ellis_Batten_Page": {
+    "title": "Ellis Batten Page - Wikipedia",
+    "favicon": "https://en.wikipedia.org/static/favicon/wikipedia.ico"
+  },
+  "https://en.wikipedia.org/wiki/Isosurface": {
+    "title": "Isosurface - Wikipedia",
+    "favicon": "https://en.wikipedia.org/static/favicon/wikipedia.ico"
+  },
+  "https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs": {
+    "title": "Maslow's hierarchy of needs - Wikipedia",
+    "favicon": "https://en.wikipedia.org/static/favicon/wikipedia.ico"
+  },
+  "https://en.wikipedia.org/wiki/Quality-adjusted_life_year": {
+    "title": "Quality-adjusted life year - Wikipedia",
+    "favicon": "https://en.wikipedia.org/static/favicon/wikipedia.ico"
+  },
+  "https://en.wikipedia.org/wiki/Tower_of_Babel": {
+    "title": "Tower of Babel - Wikipedia",
+    "favicon": "https://en.wikipedia.org/static/favicon/wikipedia.ico"
+  },
+  "https://fasttext.cc/": {
+    "title": "fastText",
+    "description": "Library for efficient text classification and representation learning",
+    "favicon": "https://fasttext.cc/img/fasttext-icon-bg-web.png"
+  },
+  "https://ghost-human-demo.github.io/": {
+    "title": "GHOST: Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation"
+  },
+  "https://github.com/JustusThies/PyMarchingCubes": {
+    "title": "GitHub - JustusThies/PyMarchingCubes: Marching cubes with and without color interpolation, and edge subsampling.",
+    "description": "Marching cubes with and without color interpolation, and edge subsampling. - JustusThies/PyMarchingCubes",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
+  "https://github.com/academicpages/academicpages.github.io/commits/master": {
+    "title": "Commits · academicpages/academicpages.github.io",
+    "description": "Github Pages template based upon HTML and Markdown for personal, portfolio-based websites. - Commits · academicpages/academicpages.github.io",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
+  "https://github.com/facebookresearch/MUSE": {
+    "title": "GitHub - facebookresearch/MUSE: A library for Multilingual Unsupervised or Supervised word Embeddings",
+    "description": "A library for Multilingual Unsupervised or Supervised word Embeddings - facebookresearch/MUSE",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
+  "https://github.com/google/mediapipe": {
+    "title": "GitHub - google-ai-edge/mediapipe: Cross-platform, customizable ML solutions for live and streaming media.",
+    "description": "Cross-platform, customizable ML solutions for live and streaming media. - google-ai-edge/mediapipe",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
+  "https://github.com/jekyll/jemoji": {
+    "title": "GitHub - jekyll/jemoji: GitHub-flavored emoji plugin for Jekyll",
+    "description": "GitHub-flavored emoji plugin for Jekyll. Contribute to jekyll/jemoji development by creating an account on GitHub.",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
+  "https://github.com/kevinzakka/learn-volumetric-fusion": {
+    "title": "GitHub - kevinzakka/learn-volumetric-fusion: Learning about volumetric fusion.",
+    "description": "Learning about volumetric fusion. Contribute to kevinzakka/learn-volumetric-fusion development by creating an account on GitHub.",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
+  "https://github.com/ofnote/gestop": {
+    "title": "GitHub - ofnote/gestop: A tool to navigate the desktop with hand gestures. Builds on mediapipe.",
+    "description": "A tool to navigate the desktop with hand gestures. Builds on mediapipe. - ofnote/gestop",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
+  "https://github.com/sriramsk1999/frlove": {
+    "title": "GitHub - sriramsk1999/frlove",
+    "description": "Contribute to sriramsk1999/frlove development by creating an account on GitHub.",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
+  "https://github.com/sriramsk1999/moj-abusive-detection": {
+    "title": "GitHub - sriramsk1999/moj-abusive-detection: Submission for the Multilingual Abusive Comment Identification Challenge on Kaggle",
+    "description": "Submission for the Multilingual Abusive Comment Identification Challenge on Kaggle - sriramsk1999/moj-abusive-detection",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
+  "https://gutenberg.org/": {
+    "title": "Project Gutenberg",
+    "description": "Project Gutenberg is a library of free eBooks.",
+    "favicon": "https://gutenberg.org/gutenberg/favicon.ico"
+  },
+  "https://haoyuzhen.com/": {
+    "title": "Haoyu Zhen",
+    "favicon": "https://haoyuzhen.com/images/favicon-32x32.png"
+  },
+  "https://huggingface.co/spaces/shariqfarooq/ZoeDepth": {
+    "title": "ZoeDepth - a Hugging Face Space by shariqfarooq",
+    "description": "Upload a photo or a 360° panorama, and the app computes a detailed metric depth map and builds a 3‑D view of the scene. You receive a grayscale depth image together with an interactive 3‑D visualiz..."
+  },
+  "https://indicnlp.ai4bharat.org/home/": {
+    "title": "IndicNLP | AI4Bharat IndicNLP",
+    "description": "IndicNLP",
+    "favicon": "https://indicnlp.ai4bharat.org/favicon/favicon-32x32.png"
+  },
+  "https://indicnlp.ai4bharat.org/indicft/": {
+    "title": "IndicFT | AI4Bharat IndicNLP",
+    "description": "IndicFT",
+    "favicon": "https://indicnlp.ai4bharat.org/favicon/favicon-32x32.png"
+  },
+  "https://jekyllrb.com/docs/configuration/markdown/": {
+    "title": "Markdown Options",
+    "description": "The various Markdown renderers supported by Jekyll sometimes have extra options available.",
+    "favicon": "https://jekyllrb.com/favicon.ico"
+  },
+  "https://kramdown.gettalong.org/index.html": {
+    "title": "Home | kramdown",
+    "description": "kramdown is a fast, pure-Ruby Markdown-superset converter"
+  },
+  "https://kramdown.gettalong.org/syntax.html": {
+    "title": "Syntax | kramdown",
+    "description": "kramdown is a fast, pure-Ruby Markdown-superset converter"
+  },
+  "https://leonidk.com/": {
+    "title": "Leonid Keselman"
+  },
+  "https://lesperelman.com/writing-assessment-robo-grading/babel-generator/": {
+    "title": "BABEL Generator | Les Perelman, Ph.D.",
+    "favicon": "https://lesperelman.com/wp-content/uploads/2015/08/cropped-cropped-Les-Perelman1-32x32.jpg"
+  },
+  "https://lightning.ai/": {
+    "title": "Lightning AI | Turn ideas into AI, Lightning fast",
+    "description": "From the PyTorch Lightning creators. Own your AI, don't rent it. Lightning is the AI cloud to build, train, and deploy your own models on 36,000+ NVIDIA GPUs.",
+    "favicon": "https://lightning.ai/favicon/favicon.ico"
+  },
+  "https://math.codidact.com/posts/278763/278772#answer-278772": {
+    "title": "Mathjax does not render new lines",
+    "description": "I can't make a new-line in MathJax. Markup: $$1 + 2 \\\\ 3$$ Result: $$1 + 2 \\\\ 3$$ It's supposed to look something like this (but...",
+    "favicon": "https://math.codidact.com/assets/square.ico"
+  },
+  "https://medium.com/offnote-labs/gestop-the-journey-5034331571cb": {
+    "title": "Gestop — The Journey",
+    "description": "The established way of interacting with most computers is a mouse and keyboard. On the other hand, hand gestures are an intuitive and…",
+    "favicon": "https://miro.medium.com/v2/5d8de952517e8160e40ef9841c781cdc14a5db313057fa3c3de41c6f5b494b19"
+  },
+  "https://midas.iiitd.ac.in/": {
+    "title": "Google Drive: Sign-in",
+    "description": "Access Google Drive with a Google account (for personal use) or Google Workspace account (for business use)."
+  },
+  "https://offnote.co/": {
+    "title": "OffNote Consulting Labs"
+  },
+  "https://openaccess.thecvf.com/content/CVPR2023W/VOCVALC/html/Krishna_DeepSmooth_Efficient_and_Smooth_Depth_Completion_CVPRW_2023_paper.html": {
+    "title": "CVPR 2023 Open Access Repository",
+    "favicon": "https://openaccess.thecvf.com/favicon.ico"
+  },
+  "https://openreview.net/forum?id=O3Y56aqpChA": {
+    "title": "Verifying your browser | OpenReview"
+  },
+  "https://people.csail.mit.edu/ganchuang/": {
+    "title": "Chuang Gan",
+    "favicon": "https://people.csail.mit.edu/ganchuang/imgs/favicon.ico"
+  },
+  "https://pes.edu/": {
+    "title": "PES University – Education for the real world",
+    "favicon": "https://pes.edu/favicon/android-icon-192x192.png"
+  },
+  "https://pypi.org/project/demoji/": {
+    "title": "demoji",
+    "description": "Accurately remove and replace emojis in text strings",
+    "favicon": "https://pypi.org/static/images/favicon.35549fe8.ico"
+  },
+  "https://rishi2019194.github.io/": {
+    "title": "Rishi Singhal",
+    "description": "A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design."
+  },
+  "https://rureadyo.github.io/": {
+    "title": "Sungjae Park"
+  },
+  "https://secondlanguagetesting.com/": {
+    "title": "Second Language Testing",
+    "description": "The Right Answer."
+  },
+  "https://sharechat.com/events/abuse-detection-challenge": {
+    "title": "ShareChat - Funny, Romantic, Videos, Shayari, Quotes | Messaging app",
+    "description": "Share & Chat on India's own social network. Available in Tamil, Telugu, Hindi, Punjabi, Gujarati, Bengali, Kannada, Malayalam, Odia, Marathi, Assamese, Bhojpuri, Rajasthani & Haryanvi",
+    "favicon": "https://sharechat.com/assets/icons/favicon-96x96.png"
+  },
+  "https://shopify.github.io/liquid/tags/control-flow/": {
+    "title": "Control flow",
+    "description": "An overview of control flow and conditional tags in the Liquid template language.",
+    "favicon": "https://shopify.github.io/liquid/images/icons/water-drop-32x.png"
+  },
+  "https://shubhtuls.github.io": {
+    "title": "Shubham Tulsiani - Home"
+  },
+  "https://shubhtuls.github.io/": {
+    "title": "Shubham Tulsiani - Home"
+  },
+  "https://sites.google.com/view/yaman-kumar/": {
+    "title": "Yaman Kumar Singla",
+    "description": "About Me",
+    "favicon": "https://www.gstatic.com/images/branding/productlogos/sites_2026/v3/ico/sites_2026_16dp.ico"
+  },
+  "https://sites.google.com/view/yaman-kumar/home": {
+    "title": "Yaman Kumar Singla",
+    "description": "About Me",
+    "favicon": "https://www.gstatic.com/images/branding/productlogos/sites_2026/v3/ico/sites_2026_16dp.ico"
+  },
+  "https://sravanchittupalli.github.io/": {
+    "title": "Sravan Chittupalli",
+    "description": "A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.",
+    "favicon": "https://sravanchittupalli.github.io/assets/img/orbit.png?9ba01141a89239fcb580db77e22ee2ff"
+  },
+  "https://wandb.ai/site": {
+    "title": "Weights & Biases: The AI Developer Platform",
+    "description": "Learn why thousands of companies rely on W&B as their system of record for training AI models and developing AI applications with confidence.",
+    "favicon": "https://site.wandb.ai/wp-content/uploads/2024/07/cropped-favicon-3.png?w=32"
+  },
+  "https://www.akshayapatra.org/": {
+    "title": "Akshaya Patra-NGO in India Supporting Food & Education of Children",
+    "description": "Akshaya Patra is an NGO in India that has dedicated 25 years towards feeding nutritious meals to school children studying in Government & Government-aided schools.",
+    "favicon": "https://www.akshayapatra.org/includes/asset/image/sky_favicon.ico"
+  },
+  "https://www.effectivealtruism.org/": {
+    "title": "Effective Altruism | Find the best ways to help others",
+    "description": "Effective altruism is a philosophy and a movement that asks the question: how can we do the most good with our time, money, and resources?",
+    "favicon": "https://www.effectivealtruism.org/favicon.ico"
+  },
+  "https://www.fabriziomusacchio.com/blog/2021-08-16-emojis_for_Jekyll/#computer": {
+    "title": "Emojis for Jekyll via Jemoji",
+    "description": "A how-to and a list of all currently working Emojis on Jekyll built websites.",
+    "favicon": "https://www.fabriziomusacchio.com/assets/images/favicon-32x32.png"
+  },
+  "https://www.givingwhatwecan.org/": {
+    "title": "Giving What We Can",
+    "description": "100x your impact by finding and donating to the best charities. Learn about high-impact philanthropy, join an effective giving community, take a giving pledge.",
+    "favicon": "https://www.givingwhatwecan.org/favicons/favicon-32x32.png"
+  },
+  "https://www.haptik.ai/tech/extract-spelling-mistakes-fasttext/": {
+    "title": "Extract Spelling Mistakes Using Fasttext",
+    "description": "In this blog, we showcase how we have tried to tackle spelling errors on our conversational AI platform using fastText.",
+    "favicon": "https://www.haptik.ai/hubfs/haptik-favicon.png"
+  },
+  "https://www.kaggle.com/c/iiitd-abuse-detection-challenge/discussion/271044": {
+    "title": "IIIT-D Multilingual Abusive Comment Identiication",
+    "description": "Massively multilingual abusive comment identification across Indic languages",
+    "favicon": "https://www.kaggle.com/static/images/favicon.ico"
+  },
+  "https://www.kaggle.com/harveenchadha/iiitd-muril-hf-tf-w-b-baseline": {
+    "title": "IIITD: MURIL + hf + tf + W&B Baseline",
+    "description": "Explore and run AI code with Kaggle Notebooks | Using data from multiple data sources",
+    "favicon": "https://www.kaggle.com/static/images/favicon.ico"
+  },
+  "https://www.kaggle.com/harveenchadha/tokenize-train-data-using-bert-tokenizer": {
+    "title": "Tokenize train data using Bert Tokenizer",
+    "description": "Explore and run AI code with Kaggle Notebooks | Using data from multiple data sources",
+    "favicon": "https://www.kaggle.com/static/images/favicon.ico"
+  },
+  "https://www.kaggle.com/nih-chest-xrays/data": {
+    "title": "NIH Chest X-rays",
+    "description": "Over 112,000 Chest X-ray images from more than 30,000 unique patients",
+    "favicon": "https://www.kaggle.com/static/images/favicon.ico"
+  },
+  "https://www.linkedin.com/in/niharika-p-b5b131170/": {
+    "title": "Niharika P. - New Relic | LinkedIn",
+    "description": "GitHub: https://github.com/prosis369 · Experience: New Relic · Education: PES University · Location: Bengaluru · 500+ connections on LinkedIn. View Niharika P.’s profile on LinkedIn, a professional community of 1 billion members.",
+    "favicon": "https://static.licdn.com/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca"
+  },
+  "https://www.linkedin.com/posts/ramit-sawhney_research-datascience-ai-activity-6836187394518126592-ISdZ": {
+    "title": "#research #datascience #ai #machinelearning #ml #hiring #researchpaper #aiforsocialgood | Ramit Sawhney | 12 comments",
+    "description": "Excited to share a unique opportunity! Publish AI research papers, present at the IEEE BigMM conference, win grand prizes, give interviews for ML Data scientist and SWE roles at ShareChat & IIIT Delhi. Do any of these sound interesting? At IIIT-Delhi and ShareChat, we are happy to announce that we w",
+    "favicon": "https://static.licdn.com/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca"
+  },
+  "https://www.midaslab.in/": {
+    "title": "MIDAS Lab",
+    "description": "\"Join the MIDAS Research Lab at IIT Kanpur! We are looking for motivated BTech, MTech, MS (Research), and PhD students passionate about AI research.\" Prof. Rajiv Ratn Shah is an Associate Professor in the Department of Intelligent Systems at the Indian Institute of Technology (IIT) Kanpur and the",
+    "favicon": "https://www.gstatic.com/images/branding/productlogos/sites_2026/v3/ico/sites_2026_16dp.ico"
+  },
+  "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8838740/": {
+    "title": "Checking your browser - reCAPTCHA"
+  },
+  "https://www.nciea.org/blog/essa/balancing-skepticism-and-utility-machine-scoring": {
+    "title": "Machine Test Scoring | Center for Assessment",
+    "description": "Machine test scoring isn't going away. We examine how educators can ensure it will measure up to human raters - and whether it even should.",
+    "favicon": "https://www.nciea.org/wp-content/themes/center-for-assessment/favicon.ico"
+  },
+  "https://www.planetary.org/worlds/pale-blue-dot": {
+    "title": "A Pale Blue Dot",
+    "description": "Look again at that dot. That's here. That's home. That's us.",
+    "favicon": "https://www.planetary.org/img/site/coast-228x228.png"
+  },
+  "https://www.pratham.org/": {
+    "title": "Pratham – Every Child In School and Learning Well",
+    "favicon": "https://www.pratham.org/wp-content/uploads/2019/04/favicon.png"
+  },
+  "https://www.ri.cmu.edu": {
+    "title": "Robotics Institute Carnegie Mellon University : Robotics Education and Research Leader",
+    "description": "Since its founding in 1979, the Robotics Institute at Carnegie Mellon University has been leading the world in robotics research and education. The Robotics Institute offers Doctoral and Master's Degrees in robotics, industrial automation and computer vision utilizing advanced artificial intelligenc",
+    "favicon": "https://www.ri.cmu.edu/app/uploads/2024/03/ri-logo-192x192-apple-icon.png"
+  },
+  "https://www.smilefoundationindia.org/health/": {
+    "title": "Health",
+    "description": "Smile Foundation is one of the best NGOs for healthcare in India, providing essential health services to underserved communities, including Delhi. Discover our impactful health programs and find healthcare support near you. Join us in making a difference today.",
+    "favicon": "https://www.smilefoundationindia.org/wp-content/uploads/2022/09/SMILE-FOUNDATION-LOGO-e1662456150120-150x150.png"
+  },
+  "https://yingyuan0414.github.io/": {
+    "title": "Ying Yuan's Homepage"
+  }
+}
