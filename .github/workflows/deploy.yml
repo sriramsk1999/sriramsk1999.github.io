@@ -31,10 +31,10 @@ jobs:
           bundler-cache: true
 
       - name: Fetch external link metadata (skips URLs already cached)
-        run: ruby _scripts/fetch_link_metadata.rb
+        run: bundle exec ruby _scripts/fetch_link_metadata.rb
 
       - name: Archive pages for the local-preview allowlist (skips URLs already archived)
-        run: ruby _scripts/archive_pages.rb # ubuntu-latest ships Chrome preinstalled
+        run: bundle exec ruby _scripts/archive_pages.rb # ubuntu-latest ships Chrome preinstalled
 
       - name: Commit refreshed link metadata/archives, if any
         run: |
