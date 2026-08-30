@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: Hello!
+title: Sriram Krishna
 excerpt: "About"
 author_profile: true
 redirect_from: 

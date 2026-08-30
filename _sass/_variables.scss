@@ -103,10 +103,10 @@ $youtube-color              : #bb0000;
 $xing-color                 : #006567;
 
 
-/* links — matches gwern.net's --GW-body-link-* palette: grayscale, no blue */
-$link-color                 : #333 !default;
-$link-color-hover           : #888 !default;
-$link-color-visited         : #666 !default;
+/* links */
+$link-color                 : #2b6cb0 !default;
+$link-color-hover           : #1a4971 !default;
+$link-color-visited         : #2b6cb0 !default;
 $masthead-link-color        : $text-color !default;
 $masthead-link-color-hover  : $link-color-hover !default;
 $navicon-link-color-hover   : mix(#fff, $primary-color, 75%) !default;

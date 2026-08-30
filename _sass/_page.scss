@@ -18,9 +18,8 @@
 
 .page {
   @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
-    @include suffix(2 of 12);
+    @include span(10 of 12);
+    @include suffix(0.5 of 12);
   }
 
   .page__inner-wrap {
@@ -74,17 +73,15 @@
     }
   }
 
-  /* gwern-style link semantics: underline style encodes what a link does.
-     solid = ordinary link; dotted = annotated (popover shows a title/description preview) */
   a {
     color: $link-color;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
+    text-decoration: none;
 
     &:hover {
       color: $link-color-hover;
       text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
@@ -94,20 +91,24 @@
     &:visited {
       color: $link-color-visited;
     }
-
-    &.popover-annotated {
-      text-decoration-style: dotted;
-    }
   }
 
-  /* drop cap on the opening paragraph, gwern-style */
+  /* drop cap + small-caps opening line on the first paragraph, gwern-style */
   > p:first-of-type::first-letter,
   > .page__lead + p::first-letter {
     float: left;
-    padding: 0.05em 0.05em 0 0;
+    padding: 0.03em 0.08em 0 0;
     font-family: $serif;
-    font-size: 3.4em;
-    line-height: 0.82;
+    font-weight: 700;
+    font-size: 4.2em;
+    line-height: 0.78;
+    color: $primary-color;
+  }
+
+  > p:first-of-type::first-line,
+  > .page__lead + p::first-line {
+    font-variant: small-caps;
+    letter-spacing: 0.02em;
   }
 
   /* footnotes (kramdown's default markup: sup > a.footnote, .footnotes > ol > li) —
@@ -166,6 +167,66 @@
   blockquote + .small {
     margin-top: -1.5em;
     padding-left: 1.25rem;
+  }
+}
+
+/* quote-of-the-day widget (About page) */
+.quote-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 220px;
+  overflow-y: auto;
+  margin: 1.5em 0;
+  padding: 1.2em 1.4em;
+  border: 1px solid $border-color;
+  background: $code-background-color;
+  border-radius: $border-radius;
+
+  &__text {
+    margin: 0 0 1em;
+    padding: 0;
+    border: none;
+    font-style: italic;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    font-family: $sans-serif;
+    font-size: $type-size-6;
+    color: $dark-gray;
+  }
+
+  &__author {
+    font-style: normal;
+  }
+
+  &__refresh {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    color: $dark-gray;
+    background: none;
+    border: 1px solid $border-color;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.4s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      color: $text-color;
+      border-color: $gray;
+    }
+
+    &:active {
+      transform: rotate(360deg);
+    }
   }
 }
 

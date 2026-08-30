@@ -14,6 +14,7 @@ require "uri"
 require "json"
 require "nokogiri"
 require "fileutils"
+require "yaml"
 
 ROOT = File.expand_path("..", __dir__)
 DATA_FILE = File.join(ROOT, "_data", "link-metadata.json")
@@ -38,7 +39,29 @@ def collect_urls
       end
     end
   end
-  urls.uniq
+  (urls + social_profile_urls).uniq
+end
+
+# The sidebar's social icons (github/linkedin/twitter/...) are built by
+# _includes/author-profile.html from _config.yml's `author:` block, so their
+# URLs never appear literally in any content file for collect_urls to find.
+# Mirror that same URL-building logic here.
+def social_profile_urls
+  config = YAML.load_file(File.join(ROOT, "_config.yml"))
+  author = config["author"] || {}
+  urls = []
+  urls << author["uri"]
+  urls << author["arxiv"]
+  urls << author["googlescholar"]
+  urls << author["semantic"]
+  urls << author["impactstory"]
+  urls << author["orcid"]
+  urls << author["pubmed"]
+  urls << "https://www.researchgate.net/profile/#{author['researchgate']}" if author["researchgate"]
+  urls << "https://github.com/#{author['github']}" if author["github"]
+  urls << "https://www.linkedin.com/in/#{author['linkedin']}" if author["linkedin"]
+  urls << "https://twitter.com/#{author['twitter']}" if author["twitter"]
+  urls.compact.select { |u| u.to_s.start_with?("http") }
 end
 
 def sanitize(str)

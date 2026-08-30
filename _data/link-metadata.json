@@ -164,6 +164,11 @@
     "description": "A tool to navigate the desktop with hand gestures. Builds on mediapipe. - ofnote/gestop",
     "favicon": "https://github.githubassets.com/favicons/favicon.svg"
   },
+  "https://github.com/sriramsk1999": {
+    "title": "sriramsk1999 - Overview",
+    "description": "MS Robotics @ CMU. sriramsk1999 has 32 repositories available. Follow their code on GitHub.",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
   "https://github.com/sriramsk1999/frlove": {
     "title": "GitHub - sriramsk1999/frlove",
     "description": "Contribute to sriramsk1999/frlove development by creating an account on GitHub.",
@@ -266,6 +271,11 @@
   "https://rureadyo.github.io/": {
     "title": "Sungjae Park"
   },
+  "https://scholar.google.com/citations?user=4eN3g0YAAAAJ&hl=en": {
+    "title": "Sriram Krishna",
+    "description": "‪MS Robotics @ CMU‬ - ‪‪Cited by 42‬‬ - ‪Computer Vision‬ - ‪Robot Learning‬",
+    "favicon": "https://scholar.google.com/favicon.ico"
+  },
   "https://secondlanguagetesting.com/": {
     "title": "Second Language Testing",
     "description": "The Right Answer."
@@ -300,6 +310,11 @@
     "title": "Sravan Chittupalli",
     "description": "A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.",
     "favicon": "https://sravanchittupalli.github.io/assets/img/orbit.png?9ba01141a89239fcb580db77e22ee2ff"
+  },
+  "https://twitter.com/sriramsk99": {
+    "title": "Sriram Krishna (@sriramsk99) on X",
+    "description": "PhD @CMU_Robotics",
+    "favicon": "https://twitter.com/favicon.ico"
   },
   "https://wandb.ai/site": {
     "title": "Weights & Biases: The AI Developer Platform",
