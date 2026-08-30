@@ -268,9 +268,6 @@
     "title": "CVPR 2023 Open Access Repository",
     "favicon": "https://openaccess.thecvf.com/favicon.ico"
   },
-  "https://openreview.net/forum?id=O3Y56aqpChA": {
-    "title": "Verifying your browser | OpenReview"
-  },
   "https://people.csail.mit.edu/ganchuang/": {
     "title": "Chuang Gan",
     "favicon": "https://people.csail.mit.edu/ganchuang/imgs/favicon.ico"
@@ -330,6 +327,11 @@
     "title": "Sravan Chittupalli",
     "description": "A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.",
     "favicon": "https://sravanchittupalli.github.io/assets/img/orbit.png?9ba01141a89239fcb580db77e22ee2ff"
+  },
+  "https://time.com/6252617/effective-altruism-sexual-harassment/": {
+    "title": "Effective Altruism Has a Hostile Culture for Women, Critics Say",
+    "description": "Seven women connected to effective altruism tell TIME they experienced harassment and worse within the community",
+    "favicon": "https://time.com/favicon/favicon-16x16.png"
   },
   "https://twitter.com/sriramsk99": {
     "title": "Sriram Krishna (@sriramsk99) on X",
@@ -427,6 +429,16 @@
     "title": "Health",
     "description": "Smile Foundation is one of the best NGOs for healthcare in India, providing essential health services to underserved communities, including Delhi. Discover our impactful health programs and find healthcare support near you. Join us in making a difference today.",
     "favicon": "https://www.smilefoundationindia.org/wp-content/uploads/2022/09/SMILE-FOUNDATION-LOGO-e1662456150120-150x150.png"
+  },
+  "https://www.theatlantic.com/ideas/archive/2022/11/cryptocurrency-effective-altruism-ftx-sam-bankman-fried/672149/": {
+    "title": "Effective Altruism Committed the Sin It Was Supposed to Correct",
+    "description": "The swift downfall of Sam Bankman-Fried brings unnecessary suspicion on a valuable form of philanthropy.",
+    "favicon": "https://cdn.theatlantic.com/_next/static/images/favicon-3888b0e329526a975703e3059a02b92d.ico"
+  },
+  "https://www.vox.com/2015/8/10/9124145/effective-altruism-global-ai": {
+    "title": "I spent a weekend at Google talking with nerds about charity. I came away … worried.",
+    "description": "Vox is a general interest news site for the 21st century. Its mission: to help everyone understand our complicated world, so that we can all help shape it. In text, video and audio, our reporters explain politics, policy, world affairs, technology, culture, science, the climate crisis, money, health",
+    "favicon": "https://www.vox.com/static-assets/icons/favicon-32x32.png"
   },
   "https://yingyuan0414.github.io/": {
     "title": "Ying Yuan's Homepage"

@@ -26,7 +26,9 @@ TIMEOUT_SECONDS = 8
 MAX_FIELD_LENGTH = 300
 MAX_REDIRECTS = 4
 
-LINK_RE = /\[[^\]]*\]\((https?:\/\/[^\s)]+)\)|href=["'](https?:\/\/[^"']+)["']/.freeze
+# non-greedy .*? (not [^\]]*) so doubled-bracket citation styles like
+# [[1]](url) still match - [^\]]* can't span the inner "]" before the outer one
+LINK_RE = /\[.*?\]\((https?:\/\/[^\s)]+)\)|href=["'](https?:\/\/[^"']+)["']/.freeze
 
 def collect_urls
   urls = []
@@ -139,11 +141,18 @@ rescue StandardError
   nil
 end
 
+# a 200 response doesn't mean we got the real page - bot-defense systems
+# happily return 200 with a challenge/interstitial page instead (openreview.net
+# did exactly this: cached "Verifying your browser | OpenReview" as if it were
+# a real title). Reject known challenge-page titles rather than cache them.
+JUNK_TITLE_RE = /verifying your browser|just a moment|attention required|access denied|checking your browser|are you a human|enable javascript and cookies/i.freeze
+
 def extract_metadata(url, html)
   doc = Nokogiri::HTML(html)
 
   title = doc.at_css('meta[property="og:title"]')&.attr("content") ||
           doc.at_css("title")&.text
+  title = nil if title && JUNK_TITLE_RE.match?(title)
   description = doc.at_css('meta[property="og:description"]')&.attr("content") ||
                 doc.at_css('meta[name="description"]')&.attr("content")
   favicon_href = doc.at_css('link[rel="icon"]')&.attr("href") ||

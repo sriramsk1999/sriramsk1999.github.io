@@ -50,6 +50,7 @@
   "sites.google.com": false,
   "sravanchittupalli.github.io": true,
   "stock.adobe.com": true,
+  "time.com": true,
   "towardsdatascience.com": false,
   "twitter.com": false,
   "upload.wikimedia.org": true,
@@ -74,6 +75,8 @@
   "www.reuters.com": false,
   "www.ri.cmu.edu": true,
   "www.smilefoundationindia.org": true,
+  "www.theatlantic.com": true,
+  "www.vox.com": false,
   "www.w3schools.com": true,
   "yingyuan0414.github.io": true
 }

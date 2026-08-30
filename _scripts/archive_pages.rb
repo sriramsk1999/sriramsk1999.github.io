@@ -29,7 +29,11 @@ CHROME_CANDIDATES = %w[google-chrome-stable google-chrome chromium-browser chrom
 # Add a URL here when you want a local live-preview snapshot for a page whose
 # domain is marked blocked in _data/live-link-domains.json.
 URLS = [
-  "https://www.research.samsung.com/"
+  "https://www.research.samsung.com/",
+  # openreview.net returns a bot-challenge (403 "ChallengeRequiredError") to
+  # any plain HTTP client, API included - a real browser may get through
+  # where scraping/API access cannot.
+  "https://openreview.net/forum?id=O3Y56aqpChA"
 ].freeze
 
 def chrome_bin
@@ -45,6 +49,19 @@ def dump_dom(bin, url, out_path)
               "--virtual-time-budget=15000", "--dump-dom", url,
               out: out_path, err: File::NULL)
   ok && File.size?(out_path).to_i > 0
+end
+
+# `--dump-dom` exits 0 and happily writes a full HTML document even when the
+# navigation itself failed - Chrome just serializes its own built-in
+# network-error page (e.g. a real "www.research.samsung.com's DNS address
+# could not be found" page got committed as if it were a real snapshot before
+# this check existed), or a bot-challenge interstitial (openreview.net served
+# "Verifying your browser" instead of the real page to a plain scraper).
+# Detect both and reject rather than archive garbage.
+def navigation_failed?(html)
+  html.include?('"errorCode":') || html.include?("chrome-error://") ||
+    html =~ /<title>[^<]*(can.t be reached|ERR_[A-Z_]+)/i ||
+    html =~ /<title>[^<]*(verifying your browser|just a moment|attention required|access denied|checking your browser)/i
 end
 
 # relative asset/link URLs in the dumped HTML need to resolve against the
@@ -77,14 +94,22 @@ def main
     slug = slug_for(url)
     out_path = File.join(ARCHIVE_DIR, "#{slug}.html")
     print "Archiving #{url} ... "
-    if dump_dom(bin, url, out_path)
-      rebase(out_path, url)
-      manifest[url] = "/assets/archive/#{slug}.html"
-      puts "ok -> #{manifest[url]}"
-    else
+
+    unless dump_dom(bin, url, out_path)
       File.delete(out_path) if File.exist?(out_path)
-      puts "failed"
+      puts "failed (chrome couldn't run)"
+      next
     end
+
+    if navigation_failed?(File.read(out_path, encoding: "UTF-8"))
+      File.delete(out_path)
+      puts "failed (chrome hit a network/DNS error reaching the page)"
+      next
+    end
+
+    rebase(out_path, url)
+    manifest[url] = "/assets/archive/#{slug}.html"
+    puts "ok -> #{manifest[url]}"
   end
 
   File.write(MANIFEST_FILE, JSON.pretty_generate(manifest.sort.to_h))
