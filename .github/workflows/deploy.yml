@@ -20,9 +20,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Gemfile.lock pins nokogiri 1.12.5-x86_64-linux, which requires Ruby < 3.1
+      # (it errors on 3.2 with "incompatible" during bundle install) - this has
+      # to match what the *lockfile* supports, not the Dockerfile's Ruby version
+      # (the Dockerfile only copies Gemfile, not Gemfile.lock, so it resolves a
+      # fresh set of gem versions instead of using these pinned ones).
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2"
+          ruby-version: "2.7"
           bundler-cache: true
 
       - name: Fetch external link metadata (skips URLs already cached)
