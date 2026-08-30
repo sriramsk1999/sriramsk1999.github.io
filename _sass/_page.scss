@@ -174,40 +174,32 @@
 
 /* quote-of-the-day widget (About page) */
 .quote-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 220px;
-  overflow-y: auto;
+  position: relative;
   margin: 1.5em 0;
-  padding: 1.2em 1.4em;
+  padding: 1.2em 2.6em 1.2em 1.4em;
   border: 1px solid $border-color;
   background: $code-background-color;
   border-radius: $border-radius;
 
   &__text {
-    margin: 0 0 1em;
+    margin: 0 0 0.5em;
     padding: 0;
     border: none;
     font-style: italic;
   }
 
-  &__footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1em;
+  &__author {
+    display: block;
+    font-style: normal;
     font-family: $sans-serif;
     font-size: $type-size-6;
     color: $dark-gray;
   }
 
-  &__author {
-    font-style: normal;
-  }
-
   &__refresh {
-    flex: 0 0 auto;
+    position: absolute;
+    top: 0.7em;
+    right: 0.7em;
     display: flex;
     align-items: center;
     justify-content: center;

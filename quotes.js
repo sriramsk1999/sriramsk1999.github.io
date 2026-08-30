@@ -38,11 +38,9 @@
       var quote = quotes[index];
       container.innerHTML =
         '<div class="quote-box">' +
+          '<button type="button" class="quote-box__refresh" aria-label="Show another quote" title="Show another quote">' + REFRESH_ICON + "</button>" +
           '<blockquote class="quote-box__text">' + quote[0] + "</blockquote>" +
-          '<div class="quote-box__footer">' +
-            '<cite class="quote-box__author">' + quote[1] + "</cite>" +
-            '<button type="button" class="quote-box__refresh" aria-label="Show another quote" title="Show another quote">' + REFRESH_ICON + "</button>" +
-          "</div>" +
+          '<cite class="quote-box__author">' + quote[1] + "</cite>" +
         "</div>";
       container.querySelector(".quote-box__refresh").addEventListener("click", function () {
         render(pickIndex());

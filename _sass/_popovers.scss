@@ -7,8 +7,11 @@
 #popover-container {
   position: absolute;
   z-index: 1000;
-  max-width: 560px;
-  min-width: 280px;
+  /* an explicit width, not just a cap - a shrink-to-fit box won't stretch to
+     max-width for a width:100% iframe (percentage children don't establish
+     an intrinsic width), so iframes ended up much narrower than text cards */
+  width: 560px;
+  max-width: calc(100vw - 2rem);
   background: #fff;
   border: 1px solid $border-color;
   border-radius: 3px;
