@@ -75,13 +75,13 @@
 
   a {
     color: $link-color;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 
     &:hover {
       color: $link-color-hover;
       text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 2px;
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
