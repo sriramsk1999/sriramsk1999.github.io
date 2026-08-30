@@ -38,7 +38,7 @@ Now, we're faced with two problems:
 2. **How do we make Automated Scoring Systems more accessible i.e. cheaper?** (Get rid of the humans, of course. We won't have to deal with pesky things like raises and inflation.)
 
 This is the exact problem we tackle in [Using Sampling to Estimate and Improve Performance of Automated Scoring Systems with Guarantees
-](https://arxiv.org/abs/2111.08906), our recent paper which has been accepted at the **Twelfth AAAI Symposium on Educational Advances in Artifical Intelligence (EAAI-22)**, held in conjunction with **AAAI-22**. Congratulations to my co-authors [Yaman Kumar Singla](https://sites.google.com/view/yaman-kumar/home), [Dr. Rajiv Ratn Shah from the MIDAS Lab](http://midas.iiitd.edu.in/) at IIIT-Delhi and [Dr. Changyou Chen](https://cse.buffalo.edu/~changyou/) from the University at Buffalo, State University of New York!
+](https://arxiv.org/abs/2111.08906), our recent paper which has been accepted at the **Twelfth AAAI Symposium on Educational Advances in Artifical Intelligence (EAAI-22)**, held in conjunction with **AAAI-22**. Congratulations to my co-authors [Yaman Kumar Singla](https://sites.google.com/view/yaman-kumar/home), [Dr. Rajiv Ratn Shah from the MIDAS Lab](https://www.midaslab.in/) at IIIT-Delhi and [Dr. Changyou Chen](https://cse.buffalo.edu/~changyou/) from the University at Buffalo, State University of New York!
 
 Existing systems go all-or-nothing with humans, and we attempt to get the best of both worlds using sampling techniques. In summary, our contributions are as follows:
 - Combine existing paradigms to integrate humans with Automated Scoring Systems *partially* by using humans to score some, but not all, of a given set of responses.
