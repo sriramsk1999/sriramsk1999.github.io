@@ -93,7 +93,7 @@
     }
   }
 
-  /* drop cap + small-caps opening line on the first paragraph, gwern-style */
+  /* drop cap on the first paragraph, gwern-style */
   > p:first-of-type::first-letter,
   > .page__lead + p::first-letter {
     float: left;
@@ -103,6 +103,14 @@
     font-size: 4.2em;
     line-height: 0.78;
     color: $primary-color;
+  }
+
+  /* small-caps opening flourish; applied via assets/js/dropcap.js as real
+     <span>s rather than ::first-line, which has a Firefox line-box bug when
+     combined with the floated ::first-letter above */
+  .dropcap-smallcaps {
+    font-variant: small-caps;
+    letter-spacing: 0.02em;
   }
 
   /* footnotes (kramdown's default markup: sup > a.footnote, .footnotes > ol > li) —

@@ -10,11 +10,10 @@
   var HIDE_DELAY = 250;
   var isTouch = window.matchMedia("(hover: none)").matches;
 
-  var container, titlebarTitle, titlebarToggle, body;
+  var container, titlebarTitle, body;
   var showTimer = null;
   var hideTimer = null;
   var activeTarget = null;
-  var activeToggleState = "card"; // "card" | "iframe" - only used for live-embeddable domains
   var internalPageCache = Object.create(null);
 
   function buildContainer() {
@@ -24,13 +23,11 @@
       '<div class="popover">' +
         '<div class="popover__titlebar">' +
           '<span class="popover__title"></span>' +
-          '<button type="button" class="popover__toggle" hidden>Live preview</button>' +
         "</div>" +
         '<div class="popover__body"></div>' +
       "</div>";
     document.body.appendChild(container);
     titlebarTitle = container.querySelector(".popover__title");
-    titlebarToggle = container.querySelector(".popover__toggle");
     body = container.querySelector(".popover__body");
 
     container.addEventListener("mouseenter", cancelHide);
@@ -50,33 +47,10 @@
     container.style.left = left + "px";
   }
 
-  function show(target, titleHtml, bodyHtml, opts) {
-    opts = opts || {};
+  function show(target, titleHtml, bodyHtml) {
     activeTarget = target;
     titlebarTitle.innerHTML = titleHtml || "";
     body.innerHTML = bodyHtml;
-
-    if (opts.iframeUrl) {
-      var cardHtml = bodyHtml;
-      titlebarToggle.hidden = false;
-      titlebarToggle.textContent = "Live preview";
-      activeToggleState = "card";
-      titlebarToggle.onclick = function () {
-        if (activeToggleState === "card") {
-          body.innerHTML = '<iframe class="popover__iframe" src="' + escapeAttr(opts.iframeUrl) + '"></iframe>';
-          titlebarToggle.textContent = "Summary";
-          activeToggleState = "iframe";
-        } else {
-          body.innerHTML = cardHtml;
-          titlebarToggle.textContent = "Live preview";
-          activeToggleState = "card";
-        }
-        requestAnimationFrame(function () { position(target); });
-      };
-    } else {
-      titlebarToggle.hidden = true;
-      titlebarToggle.onclick = null;
-    }
 
     container.classList.add("visible");
     position(target);
@@ -187,12 +161,19 @@
 
   function externalHandler(link) {
     return function () {
-      var meta = lookupMetadata(link);
       var domain = hostnameOf(link.href);
-      var live = isLiveEmbeddable(link.hostname);
+
+      // live-embeddable domains: show the actual page directly, no card, no toggle
+      if (isLiveEmbeddable(link.hostname)) {
+        show(link, escapeHtml(domain), '<iframe class="popover__iframe" src="' + escapeAttr(link.href) + '"></iframe>');
+        return;
+      }
+
+      // otherwise, gwern's own fallback when live isn't available: an annotation
+      // (here, build-time-fetched title/description) if we have one
+      var meta = lookupMetadata(link);
       var openLink = '<p class="popover__open"><a href="' + escapeAttr(link.href) + '" target="_blank" rel="noopener">Open ' +
         escapeHtml(domain) + " ↗</a></p>";
-      var iframeOpts = live ? { iframeUrl: link.href } : undefined;
 
       if (meta) {
         var favicon = meta.favicon
@@ -203,9 +184,9 @@
         var descHtml = meta.description
           ? "<p>" + escapeHtml(meta.description) + "</p>"
           : '<p class="popover__empty">No description available.</p>';
-        show(link, titleHtml, descHtml + openLink, iframeOpts);
+        show(link, titleHtml, descHtml + openLink);
       } else {
-        show(link, escapeHtml(domain), '<p class="popover__empty">No preview available.</p>' + openLink, iframeOpts);
+        show(link, escapeHtml(domain), '<p class="popover__empty">No preview available.</p>' + openLink);
       }
     };
   }
