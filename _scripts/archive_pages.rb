@@ -29,7 +29,7 @@ CHROME_CANDIDATES = %w[google-chrome-stable google-chrome chromium-browser chrom
 # Add a URL here when you want a local live-preview snapshot for a page whose
 # domain is marked blocked in _data/live-link-domains.json.
 URLS = [
-  "https://www.research.samsung.com/",
+  "https://research.samsung.com/",
   # openreview.net returns a bot-challenge (403 "ChallengeRequiredError") to
   # any plain HTTP client, API included - a real browser may get through
   # where scraping/API access cannot.

@@ -15,7 +15,7 @@ redirect_from:
 
 I am a PhD student at [**The Robotics Institute @ Carnegie Mellon University**](https://www.ri.cmu.edu), co-advised by [David Held](https://davheld.github.io) and [Shubham Tulsiani](https://shubhtuls.github.io). My research lies at the intersection of Computer Vision and Robot Learning for Manipulation. I'm interested in building systems that extract useful information from messy real-world data, and in learning generalizable representations for dexterous manipulation that transfers across embodiments.
 
-Previously, I completed my Masters in Robotics at CMU, advised by David Held. I was a Software Engineer at [Samsung Research](https://www.research.samsung.com/), where I worked on Depth Estimation and 3D Scene Reconstruction. I also spent a period of time as a Research Assistant at the [MIDAS lab in IIIT-Delhi](https://www.midaslab.in/). I completed my B.Tech in Computer Science and Engineering from [PES University](https://pes.edu/) in 2021 with a specialization in Data Science.
+Previously, I completed my Masters in Robotics at CMU, advised by David Held. I was a Software Engineer at [Samsung Research](https://research.samsung.com/), where I worked on Depth Estimation and 3D Scene Reconstruction. I also spent a period of time as a Research Assistant at the [MIDAS lab in IIIT-Delhi](https://www.midaslab.in/). I completed my B.Tech in Computer Science and Engineering from [PES University](https://pes.edu/) in 2021 with a specialization in Data Science.
 
 Feel free to [**email me**](mailto:sskrishn@cs.cmu.edu)! :wave: I'm happy to chat about any and all topics, and if for some reason you'd like more of my time, you can bribe me with a donation: any amount, to a charity you believe in. ([why?](/posts/2023/08/effective-altruism/))
 

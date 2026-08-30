@@ -281,6 +281,11 @@
     "description": "Accurately remove and replace emojis in text strings",
     "favicon": "https://pypi.org/static/images/favicon.35549fe8.ico"
   },
+  "https://research.samsung.com/": {
+    "title": "Home | Samsung Research",
+    "description": "Samsung Research is the advanced research & development hub of Samsung's SET (End-products) Business who is leading the development of future technologies with 22 R&D centers and 20,000 researchers around the globe.",
+    "favicon": "https://cdn.samsung.com/etc/designs/smg/global/imgs/favicon.ico"
+  },
   "https://rishi2019194.github.io/": {
     "title": "Rishi Singhal",
     "description": "A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design."
