@@ -47,6 +47,7 @@
       container.querySelector(".quote-box__refresh").addEventListener("click", function () {
         render(pickIndex());
       });
+      if (window.GW_popovers) window.GW_popovers.bindWithin(container);
     }
 
     render(pickIndex());

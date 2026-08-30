@@ -105,12 +105,6 @@
     color: $primary-color;
   }
 
-  > p:first-of-type::first-line,
-  > .page__lead + p::first-line {
-    font-variant: small-caps;
-    letter-spacing: 0.02em;
-  }
-
   /* footnotes (kramdown's default markup: sup > a.footnote, .footnotes > ol > li) —
      intercepted by the popover engine, but styled here so they degrade gracefully without JS */
   sup {

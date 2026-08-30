@@ -18,6 +18,7 @@ require "yaml"
 
 ROOT = File.expand_path("..", __dir__)
 DATA_FILE = File.join(ROOT, "_data", "link-metadata.json")
+LIVE_DOMAINS_FILE = File.join(ROOT, "_data", "live-link-domains.json")
 CONTENT_DIRS = %w[_posts _pages _publications _talks _mlmonad].map { |d| File.join(ROOT, d) }
 USER_AGENT = "Mozilla/5.0 (compatible; sriramsk1999.github.io-linkbot/1.0; +https://sriramsk1999.github.io)".freeze
 TIMEOUT_SECONDS = 8
@@ -121,14 +122,51 @@ def extract_metadata(url, html)
   }.compact
 end
 
-def save(data)
-  FileUtils.mkdir_p(File.dirname(DATA_FILE))
-  File.write(DATA_FILE, JSON.pretty_generate(data.sort.to_h))
+def save(file, data)
+  FileUtils.mkdir_p(File.dirname(file))
+  File.write(file, JSON.pretty_generate(data.sort.to_h))
+end
+
+# Per gwern's own approach (see LinkLive.hs in a gwern.net checkout): most sites
+# block being framed (X-Frame-Options / CSP frame-ancestors), so a live-iframe
+# popover is only offered for domains verified not to send those headers -
+# never attempted blindly on arbitrary external links.
+def frameable?(host)
+  uri = URI.parse("https://#{host}")
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.open_timeout = TIMEOUT_SECONDS
+  http.read_timeout = TIMEOUT_SECONDS
+  request = Net::HTTP::Get.new(uri)
+  request["User-Agent"] = USER_AGENT
+  headers = http.request(request).to_hash
+  csp = Array(headers["content-security-policy"]).join(" ").downcase
+  !(headers.key?("x-frame-options") || csp.include?("frame-ancestors"))
+rescue StandardError
+  false
+end
+
+def update_live_domains(urls)
+  existing = File.exist?(LIVE_DOMAINS_FILE) ? JSON.parse(File.read(LIVE_DOMAINS_FILE)) : {}
+  hosts = urls.filter_map { |u| URI.parse(u).host rescue nil }.uniq
+  new_hosts = hosts.reject { |h| existing.key?(h) }
+
+  puts "#{hosts.size} domains in use (#{new_hosts.size} new) - checking frame policy."
+  new_hosts.each_with_index do |host, i|
+    print "Checking #{host} ... "
+    result = frameable?(host)
+    existing[host] = result
+    puts result ? "embeddable" : "blocked"
+    save(LIVE_DOMAINS_FILE, existing) if (i + 1) % 10 == 0
+  end
+  save(LIVE_DOMAINS_FILE, existing)
+  puts "Wrote #{existing.size} domains to #{LIVE_DOMAINS_FILE}"
 end
 
 def main
   existing = File.exist?(DATA_FILE) ? JSON.parse(File.read(DATA_FILE)) : {}
   urls = collect_urls
+  update_live_domains(urls)
   new_urls = urls.reject { |u| existing.key?(u) }
 
   puts "#{urls.size} external links found (#{new_urls.size} new)."
@@ -149,10 +187,10 @@ def main
 
     existing[url] = meta
     puts "ok"
-    save(existing) if (i + 1) % 10 == 0 # checkpoint periodically so a slow/interrupted run doesn't lose progress
+    save(DATA_FILE, existing) if (i + 1) % 10 == 0 # checkpoint periodically so a slow/interrupted run doesn't lose progress
   end
 
-  save(existing)
+  save(DATA_FILE, existing)
   puts "Wrote #{existing.size} entries to #{DATA_FILE}"
 end
 

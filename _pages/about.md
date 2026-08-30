@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: Sriram Krishna
+seo_title: Home
 excerpt: "About"
 author_profile: true
 redirect_from: 
