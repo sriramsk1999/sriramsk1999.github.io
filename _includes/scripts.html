@@ -5,6 +5,8 @@
   window.GW_linkMetadata = {{ site.data['link-metadata'] | jsonify | replace: '</script>', '<\/script>' }};
   /* domains verified not to send X-Frame-Options/CSP frame-ancestors, keyed by hostname; see _scripts/fetch_link_metadata.rb */
   window.GW_liveLinkDomains = {{ site.data['live-link-domains'] | jsonify | replace: '</script>', '<\/script>' }};
+  /* curated local snapshots for pages that block framing, keyed by URL -> local path; see _scripts/archive_pages.rb */
+  window.GW_localArchives = {{ site.data['local-archives'] | jsonify | replace: '</script>', '<\/script>' }};
 </script>
 <script src="{{ base_path }}/assets/js/popovers.js"></script>
 <script src="{{ base_path }}/assets/js/dropcap.js"></script>

@@ -159,9 +159,24 @@
     show(link, escapeHtml(data.title), html);
   }
 
+  function lookupLocalArchive(link) {
+    if (!window.GW_localArchives) return null;
+    return window.GW_localArchives[link.href] || window.GW_localArchives[link.getAttribute("href")] || null;
+  }
+
   function externalHandler(link) {
     return function () {
       var domain = hostnameOf(link.href);
+
+      // a domain that blocks framing but has a curated local snapshot (see
+      // _scripts/archive_pages.rb): iframe that same-origin copy instead -
+      // this is gwern's own trick (build/LinkArchive.hs), just for a small
+      // manually-curated list instead of his ~14,000-page archive
+      var archivePath = lookupLocalArchive(link);
+      if (archivePath) {
+        show(link, escapeHtml(domain), '<iframe class="popover__iframe" src="' + escapeAttr(archivePath) + '"></iframe>');
+        return;
+      }
 
       // live-embeddable domains: show the actual page directly, no card, no toggle
       if (isLiveEmbeddable(link.hostname)) {

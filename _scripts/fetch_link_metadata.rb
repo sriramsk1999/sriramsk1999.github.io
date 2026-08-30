@@ -15,6 +15,7 @@ require "json"
 require "nokogiri"
 require "fileutils"
 require "yaml"
+require "rexml/document"
 
 ROOT = File.expand_path("..", __dir__)
 DATA_FILE = File.join(ROOT, "_data", "link-metadata.json")
@@ -65,11 +66,44 @@ def social_profile_urls
   urls.compact.select { |u| u.to_s.start_with?("http") }
 end
 
-def sanitize(str)
+def sanitize(str, max_length = MAX_FIELD_LENGTH)
   return nil if str.nil?
   cleaned = str.gsub(/[\r\n\t]+/, " ").gsub(/\s+/, " ").strip
   cleaned = cleaned.gsub(%r{</?script}i, "") # defense in depth, on top of the Liquid-side escape at embed time
-  cleaned.empty? ? nil : cleaned[0, MAX_FIELD_LENGTH]
+  cleaned.empty? ? nil : cleaned[0, max_length]
+end
+
+# arXiv sends X-Frame-Options, so it can never be a live-iframe popup - but per
+# gwern's own approach (build/Annotation/Arxiv.hs in a gwern.net checkout), it
+# doesn't need to be: arXiv publishes a free API with real title/author/abstract
+# data, which makes a much better annotation than scraping og: tags off the
+# abstract page ever would.
+ARXIV_ID_RE = %r{arxiv\.org/(?:abs|pdf)/([\w.\-]+?)(?:v\d+)?(?:\.pdf)?(?:[?#].*)?\z}i.freeze
+
+def arxiv_id(url)
+  m = ARXIV_ID_RE.match(url)
+  m && m[1]
+end
+
+def fetch_arxiv_metadata(id)
+  uri = URI("https://export.arxiv.org/api/query?id_list=#{id}")
+  response = Net::HTTP.get_response(uri)
+  return nil unless response.is_a?(Net::HTTPSuccess)
+
+  entry = REXML::Document.new(response.body).elements["feed/entry"]
+  return nil unless entry
+
+  title = entry.elements["title"]&.text
+  summary = entry.elements["summary"]&.text
+  sleep 1 # arXiv API asks for no more than one request per few seconds
+
+  {
+    "title" => sanitize(title, 300),
+    "description" => sanitize(summary, 800),
+    "favicon" => "https://arxiv.org/favicon.ico"
+  }.compact
+rescue StandardError
+  nil
 end
 
 def fetch(url, redirects_left = MAX_REDIRECTS)
@@ -173,6 +207,19 @@ def main
 
   new_urls.each_with_index do |url, i|
     print "Fetching #{url} ... "
+
+    if (id = arxiv_id(url))
+      meta = fetch_arxiv_metadata(id)
+      if meta.nil? || (meta["title"].nil? && meta["description"].nil?)
+        puts "skip (arXiv API had nothing for #{id})"
+        next
+      end
+      existing[url] = meta
+      puts "ok (via arXiv API)"
+      save(DATA_FILE, existing) if (i + 1) % 10 == 0
+      next
+    end
+
     html = fetch(url)
     if html.nil?
       puts "skip (unreachable or non-HTML)"

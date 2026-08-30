@@ -34,38 +34,53 @@
   },
   "https://arxiv.org/abs/1506.02142": {
     "title": "Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning",
-    "description": "Deep learning tools have gained tremendous attention in applied machine learning. However such tools for regression and classification do not capture model uncertainty. In comparison, Bayesian models offer a mathematically grounded framework to reason about model uncertainty, but usually come with a",
-    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+    "description": "Deep learning tools have gained tremendous attention in applied machine learning. However such tools for regression and classification do not capture model uncertainty. In comparison, Bayesian models offer a mathematically grounded framework to reason about model uncertainty, but usually come with a prohibitive computational cost. In this paper we develop a new theoretical framework casting dropout training in deep neural networks (NNs) as approximate Bayesian inference in deep Gaussian processes. A direct result of this theory gives us tools to model uncertainty with dropout NNs -- extracting information from existing models that has been thrown away so far. This mitigates the problem of representing uncertainty in deep learning without sacrificing either computational complexity or test ",
+    "favicon": "https://arxiv.org/favicon.ico"
   },
   "https://arxiv.org/abs/2002.05709": {
     "title": "A Simple Framework for Contrastive Learning of Visual Representations",
-    "description": "This paper presents SimCLR: a simple framework for contrastive learning of visual representations. We simplify recently proposed contrastive self-supervised learning algorithms without requiring specialized architectures or a memory bank. In order to understand what enables the contrastive predictio",
-    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+    "description": "This paper presents SimCLR: a simple framework for contrastive learning of visual representations. We simplify recently proposed contrastive self-supervised learning algorithms without requiring specialized architectures or a memory bank. In order to understand what enables the contrastive prediction tasks to learn useful representations, we systematically study the major components of our framework. We show that (1) composition of data augmentations plays a critical role in defining effective predictive tasks, (2) introducing a learnable nonlinear transformation between the representation and the contrastive loss substantially improves the quality of the learned representations, and (3) contrastive learning benefits from larger batch sizes and more training steps compared to supervised le",
+    "favicon": "https://arxiv.org/favicon.ico"
   },
   "https://arxiv.org/abs/2004.00827": {
     "title": "Approximate Selection with Guarantees using Proxies",
-    "description": "Due to the falling costs of data acquisition and storage, researchers and industry analysts often want to find all instances of rare events in large datasets. For instance, scientists can cheaply capture thousands of hours of video, but are limited by the need to manually inspect long videos to iden",
-    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+    "description": "Due to the falling costs of data acquisition and storage, researchers and industry analysts often want to find all instances of rare events in large datasets. For instance, scientists can cheaply capture thousands of hours of video, but are limited by the need to manually inspect long videos to identify relevant objects and events. To reduce this cost, recent work proposes to use cheap proxy models, such as image classifiers, to identify an approximate set of data points satisfying a data selection filter. Unfortunately, this recent work does not provide the statistical accuracy guarantees necessary in scientific and production settings. In this work, we introduce novel algorithms for approximate selection queries with statistical accuracy guarantees. Namely, given a limited number of exac",
+    "favicon": "https://arxiv.org/favicon.ico"
   },
   "https://arxiv.org/abs/2103.10730": {
     "title": "MuRIL: Multilingual Representations for Indian Languages",
-    "description": "India is a multilingual society with 1369 rationalized languages and dialects being spoken across the country (INDIA, 2011). Of these, the 22 scheduled languages have a staggering total of 1.17 billion speakers and 121 languages have more than 10,000 speakers (INDIA, 2011). India also has the second",
-    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+    "description": "India is a multilingual society with 1369 rationalized languages and dialects being spoken across the country (INDIA, 2011). Of these, the 22 scheduled languages have a staggering total of 1.17 billion speakers and 121 languages have more than 10,000 speakers (INDIA, 2011). India also has the second largest (and an ever growing) digital footprint (Statista, 2020). Despite this, today's state-of-the-art multilingual systems perform suboptimally on Indian (IN) languages. This can be explained by the fact that multilingual language models (LMs) are often trained on 100+ languages together, leading to a small representation of IN languages in their vocabulary and training data. Multilingual LMs are substantially less effective in resource-lean scenarios (Wu and Dredze, 2020; Lauscher et al., 2",
+    "favicon": "https://arxiv.org/favicon.ico"
   },
   "https://arxiv.org/abs/2109.14076": {
     "title": "RAFT: A Real-World Few-Shot Text Classification Benchmark",
-    "description": "Large pre-trained language models have shown promise for few-shot learning, completing text-based tasks given only a few task-specific examples. Will models soon solve classification tasks that have so far been reserved for human research assistants? Existing benchmarks are not designed to measure p",
-    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+    "description": "Large pre-trained language models have shown promise for few-shot learning, completing text-based tasks given only a few task-specific examples. Will models soon solve classification tasks that have so far been reserved for human research assistants? Existing benchmarks are not designed to measure progress in applied settings, and so don't directly answer this question. The RAFT benchmark (Real-world Annotated Few-shot Tasks) focuses on naturally occurring tasks and uses an evaluation setup that mirrors deployment. Baseline evaluations on RAFT reveal areas current techniques struggle with: reasoning over long texts and tasks with many classes. Human baselines show that some classification tasks are difficult for non-expert humans, reflecting that real-world value sometimes depends on domai",
+    "favicon": "https://arxiv.org/favicon.ico"
   },
   "https://arxiv.org/abs/2111.08906": {
     "title": "Using Sampling to Estimate and Improve Performance of Automated Scoring Systems with Guarantees",
-    "description": "Automated Scoring (AS), the natural language processing task of scoring essays and speeches in an educational testing setting, is growing in popularity and being deployed across contexts from government examinations to companies providing language proficiency services. However, existing systems eith",
-    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+    "description": "Automated Scoring (AS), the natural language processing task of scoring essays and speeches in an educational testing setting, is growing in popularity and being deployed across contexts from government examinations to companies providing language proficiency services. However, existing systems either forgo human raters entirely, thus harming the reliability of the test, or score every response by both human and machine thereby increasing costs. We target the spectrum of possible solutions in between, making use of both humans and machines to provide a higher quality test while keeping costs reasonable to democratize access to AS. In this work, we propose a combination of the existing paradigms, sampling responses to be scored by humans intelligently. We propose reward sampling and observe",
+    "favicon": "https://arxiv.org/favicon.ico"
   },
   "https://arxiv.org/abs/2506.09068": {
     "title": "BG-HOP: A Bimanual Generative Hand-Object Prior",
-    "description": "In this work, we present BG-HOP, a generative prior that seeks to model bimanual hand-object interactions in 3D. We address the challenge of limited bimanual interaction data by extending existing single-hand generative priors, demonstrating preliminary results in capturing the joint distribution of",
-    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png"
+    "description": "In this work, we present BG-HOP, a generative prior that seeks to model bimanual hand-object interactions in 3D. We address the challenge of limited bimanual interaction data by extending existing single-hand generative priors, demonstrating preliminary results in capturing the joint distribution of hands and objects. Our experiments showcase the model's capability to generate bimanual interactions and synthesize grasps for given objects. We make code and models publicly available.",
+    "favicon": "https://arxiv.org/favicon.ico"
+  },
+  "https://arxiv.org/pdf/1607.04606.pdf": {
+    "title": "Enriching Word Vectors with Subword Information",
+    "description": "Continuous word representations, trained on large unlabeled corpora are useful for many natural language processing tasks. Popular models that learn such representations ignore the morphology of words, by assigning a distinct vector to each word. This is a limitation, especially for languages with large vocabularies and many rare words. In this paper, we propose a new approach based on the skipgram model, where each word is represented as a bag of character $n$-grams. A vector representation is associated to each character $n$-gram; words being represented as the sum of these representations. Our method is fast, allowing to train models on large corpora quickly and allows us to compute word representations for words that did not appear in the training data. We evaluate our word representat",
+    "favicon": "https://arxiv.org/favicon.ico"
+  },
+  "https://arxiv.org/pdf/1912.07200.pdf": {
+    "title": "A Broader Study of Cross-Domain Few-Shot Learning",
+    "description": "Recent progress on few-shot learning largely relies on annotated data for meta-learning: base classes sampled from the same domain as the novel classes. However, in many applications, collecting data for meta-learning is infeasible or impossible. This leads to the cross-domain few-shot learning problem, where there is a large shift between base and novel class domains. While investigations of the cross-domain few-shot scenario exist, these works are limited to natural images that still contain a high degree of visual similarity. No work yet exists that examines few-shot learning across different imaging methods seen in real world scenarios, such as aerial and medical imaging. In this paper, we propose the Broader Study of Cross-Domain Few-Shot Learning (BSCD-FSL) benchmark, consisting of i",
+    "favicon": "https://arxiv.org/favicon.ico"
+  },
+  "https://arxiv.org/pdf/2101.00027.pdf": {
+    "title": "The Pile: An 800GB Dataset of Diverse Text for Language Modeling",
+    "description": "Recent work has demonstrated that increased training dataset diversity improves general cross-domain knowledge and downstream generalization capability for large-scale language models. With this in mind, we present \\textit{the Pile}: an 825 GiB English text corpus targeted at training large-scale language models. The Pile is constructed from 22 diverse high-quality subsets -- both existing and newly constructed -- many of which derive from academic or professional sources. Our evaluation of the untuned performance of GPT-2 and GPT-3 on the Pile shows that these models struggle on many of its components, such as academic writing. Conversely, models trained on the Pile improve significantly over both Raw CC and CC-100 on all components of the Pile, while improving performance on downstream e",
+    "favicon": "https://arxiv.org/favicon.ico"
   },
   "https://beisner.me/": {
     "title": "Ben Eisner"
