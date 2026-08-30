@@ -57,11 +57,14 @@ end
 # could not be found" page got committed as if it were a real snapshot before
 # this check existed), or a bot-challenge interstitial (openreview.net served
 # "Verifying your browser" instead of the real page to a plain scraper).
-# Detect both and reject rather than archive garbage.
-def navigation_failed?(html)
-  html.include?('"errorCode":') || html.include?("chrome-error://") ||
-    html =~ /<title>[^<]*(can.t be reached|ERR_[A-Z_]+)/i ||
-    html =~ /<title>[^<]*(verifying your browser|just a moment|attention required|access denied|checking your browser)/i
+# Detect both, distinctly, so a failure is at least explained accurately.
+def rejection_reason(html)
+  if html.include?('"errorCode":') || html.include?("chrome-error://") ||
+     html =~ /<title>[^<]*(can.t be reached|ERR_[A-Z_]+)/i
+    "chrome hit a network/DNS error reaching the page"
+  elsif html =~ /<title>[^<]*(verifying your browser|just a moment|attention required|access denied|checking your browser)/i
+    "site served a bot-challenge page instead of the real content"
+  end
 end
 
 # relative asset/link URLs in the dumped HTML need to resolve against the
@@ -101,9 +104,10 @@ def main
       next
     end
 
-    if navigation_failed?(File.read(out_path, encoding: "UTF-8"))
+    reason = rejection_reason(File.read(out_path, encoding: "UTF-8"))
+    if reason
       File.delete(out_path)
-      puts "failed (chrome hit a network/DNS error reaching the page)"
+      puts "failed (#{reason})"
       next
     end
 
