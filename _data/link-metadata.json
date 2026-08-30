@@ -112,6 +112,11 @@
   "https://docs.mathjax.org/en/latest/": {
     "title": "MathJax Documentation — MathJax 4.0 documentation"
   },
+  "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Quality_of_life_indicators_-_measuring_quality_of_life": {
+    "title": "<span class=\"mw-page-title-main\">Quality of life indicators - measuring quality of life</span>",
+    "description": "description",
+    "favicon": "https://ec.europa.eu/eurostat/statistics-explained/se/skins/Statexprevamp/ressources/media/favicon.ico"
+  },
   "https://en.wikipedia.org/wiki/Code-switching": {
     "title": "Code-switching - Wikipedia",
     "favicon": "https://en.wikipedia.org/static/favicon/wikipedia.ico"
