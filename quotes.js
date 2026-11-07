@@ -2,17 +2,17 @@
   "use strict";
 
   var quotes = [
-    ["Ah, but a man's reach should exceed his grasp, <br>Or what's a heaven for?", "Robert Browning"],
-    ["The most important step a man can take. It's not the first one, is it? It's the next one. Always the next step, Dalinar.", "Dalinar Kholin"],
-    ["It matters not how strait the gate, <br>How charged with punishments the scroll, <br>I am the master of my fate,<br>I am the captain of my soul.\n", "William Ernest Henley"],
-    ["Do not go gentle into that good night. <br>Rage, rage against the dying of the light.", "Dylan Thomas"],
-    ["How do you eat an elephant? <br>One bite at a time.", "(Attributed to) Confucius"],
-    ["The struggle itself towards the heights is enough to fill a man's heart. One must imagine Sisyphus happy.", "Albert Camus"],
-    ["कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। <br>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥ २-४७<br><br> You have the right to work only but never to its fruits. <br> Let not the fruits of action be your motive, nor let your attachment be to inaction.", "Bhagavad Gita, Chapter 2, Verse: 47"],
-    ["<a href='https://www.sefaria.org/sheets/49421.9?lang=bi&with=all&lang2=en'>This too shall pass</a>", "Persian Adage"],
-    ["No man ever steps in the same river twice, for it is not the same river and he is not the same man.", "Heraclitus"],
-    ["Talent is something you make bloom, instinct is something you polish.", "Oikawa Tōru"],
-    ["We work in the dark - we do what we can - we give what we have. Our doubt is our passion, and our passion is our task. The rest is the madness of art.", "Henry James"]
+    ["Ah, but a man's reach should exceed his grasp, <br>Or what's a heaven for?", "Robert Browning, “Andrea del Sarto”"],
+    ["The most important step a man can take. It's not the first one, is it? It's the next one. Always the next step, Dalinar.", "Dalinar Kholin, <em>Oathbringer</em>"],
+    ["It matters not how strait the gate, <br>How charged with punishments the scroll, <br>I am the master of my fate,<br>I am the captain of my soul.", "William Ernest Henley, “Invictus”"],
+    ["Do not go gentle into that good night. <br>Rage, rage against the dying of the light.", "Dylan Thomas, “Do not go gentle into that good night”"],
+    ["The struggle itself toward the heights is enough to fill a man's heart. One must imagine Sisyphus happy.", "Albert Camus, <em>The Myth of Sisyphus</em>"],
+    ["कर्मण्येवाधिकारस्ते मा फलेषु कदाचन। <br>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥ २-४७<br><br> You have the right to work only but never to its fruits. <br> Let not the fruits of action be your motive, nor let your attachment be to inaction.", "Bhagavad Gita 2.47"],
+    ["<a href='https://www.sefaria.org/sheets/49421.9?lang=bi&with=all&lang2=en'>This too shall pass</a>", "Jewish folklore, King Solomon's ring"],
+    ["Talent is something you make bloom, instinct is something you polish.", "Oikawa Tōru, <em>Haikyū!!</em>"],
+    ["We work in the dark—we do what we can—we give what we have. Our doubt is our passion, and our passion is our task. The rest is the madness of art.", "Henry James, “The Middle Years”"],
+    ["In fearful day, in raging night, <br>With strong hearts full, our souls ignite, <br>When all seems lost in the War of Light, <br>Look to the stars, for hope burns bright!", "Blue Lantern Oath"],
+    ["If I am not for myself, who will be for me? <br>And if I am only for myself, what am I? <br>And if not now, when?", "Hillel the Elder, Pirkei Avot 1:14"]
   ];
 
   function init() {

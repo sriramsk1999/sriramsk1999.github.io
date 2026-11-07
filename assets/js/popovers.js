@@ -164,28 +164,38 @@
     return window.GW_localArchives[link.href] || window.GW_localArchives[link.getAttribute("href")] || null;
   }
 
+  // What an external link's popover will show, in priority order. The single
+  // source of truth for both externalHandler (what to render) and classify
+  // (which link indicator to draw), so the two can't drift apart.
+  function externalMode(link) {
+    // a domain that blocks framing but has a curated local snapshot (see
+    // _scripts/archive_pages.rb): iframe that same-origin copy instead -
+    // this is gwern's own trick (build/LinkArchive.hs), just for a small
+    // manually-curated list instead of his ~14,000-page archive
+    if (lookupLocalArchive(link)) return "archive";
+    // live-embeddable domains: show the actual page directly, no card, no toggle
+    if (isLiveEmbeddable(link.hostname)) return "live";
+    // otherwise, gwern's own fallback when live isn't available: an annotation
+    // (here, build-time-fetched title/description) if we have one
+    if (lookupMetadata(link)) return "annotation";
+    return "none";
+  }
+
   function externalHandler(link) {
     return function () {
       var domain = hostnameOf(link.href);
+      var mode = externalMode(link);
 
-      // a domain that blocks framing but has a curated local snapshot (see
-      // _scripts/archive_pages.rb): iframe that same-origin copy instead -
-      // this is gwern's own trick (build/LinkArchive.hs), just for a small
-      // manually-curated list instead of his ~14,000-page archive
-      var archivePath = lookupLocalArchive(link);
-      if (archivePath) {
-        show(link, escapeHtml(domain), '<iframe class="popover__iframe" src="' + escapeAttr(archivePath) + '"></iframe>');
+      if (mode === "archive") {
+        show(link, escapeHtml(domain), '<iframe class="popover__iframe" src="' + escapeAttr(lookupLocalArchive(link)) + '"></iframe>');
         return;
       }
 
-      // live-embeddable domains: show the actual page directly, no card, no toggle
-      if (isLiveEmbeddable(link.hostname)) {
+      if (mode === "live") {
         show(link, escapeHtml(domain), '<iframe class="popover__iframe" src="' + escapeAttr(link.href) + '"></iframe>');
         return;
       }
 
-      // otherwise, gwern's own fallback when live isn't available: an annotation
-      // (here, build-time-fetched title/description) if we have one
       var meta = lookupMetadata(link);
       var openLink = '<p class="popover__open"><a href="' + escapeAttr(link.href) + '" target="_blank" rel="noopener">Open ' +
         escapeHtml(domain) + " ↗</a></p>";
@@ -206,12 +216,45 @@
     };
   }
 
+  /* ----- link indicators (see "POP-FRAME INDICATORS" in _sass/_popovers.scss) ----- */
+
+  // gwern's indicator hook (extracts.js addTargetsWithin): an empty span as
+  // the link's first child, which CSS draws as the "L" tick. Plus a U+2060
+  // WORD JOINER prepended to the link's first text node so the line can't
+  // break between the tick and the first word - it must go INTO the existing
+  // text node; a separate node causes text-shadow artifacts (per gwern).
+  function addIndicatorHook(link) {
+    if (!link.closest(".page__content")) return; // only where the underline CSS applies
+    if (link.querySelector(".indicator-hook")) return; // bindWithin can re-run on a container
+
+    // first text node with visible text - links with none (image-only) have
+    // no underline for a hook to join
+    var walker = document.createTreeWalker(link, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) { return /\S/.test(n.textContent) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP; }
+    });
+    var firstText = walker.nextNode();
+    if (!firstText) return;
+
+    var hook = document.createElement("span");
+    hook.className = "indicator-hook";
+    link.insertBefore(hook, link.firstChild);
+    if (firstText.textContent.charAt(0) !== "⁠") firstText.textContent = "⁠" + firstText.textContent;
+    link.classList.add("has-indicator-hook");
+  }
+
+  function applyIndicator(link, indicator) {
+    if (indicator === "content") addIndicatorHook(link);
+    else if (indicator === "annotation") link.classList.add("has-annotation");
+  }
+
   /* ----- binding ----- */
 
+  // indicator: "content" (popover shows the page itself -> hook),
+  // "annotation" (popover shows a summary card -> dotted underline), or null
   function classify(link) {
     var href = link.getAttribute("href");
     if (!href) return null;
-    if (link.classList.contains("footnote")) return { handler: footnoteHandler(link), annotate: false };
+    if (link.classList.contains("footnote")) return { handler: footnoteHandler(link), indicator: null };
     if (href.charAt(0) === "#") return null; // in-page anchors (TOC etc.)
     if (/^(mailto:|tel:|javascript:)/i.test(href)) return null;
 
@@ -219,10 +262,14 @@
 
     if (!isExternal) {
       if (/\.(png|jpe?g|gif|svg|webp|pdf|zip|mp4)$/i.test(href)) return null; // media, not pages
-      return { handler: internalHandler(link), annotate: true };
+      return { handler: internalHandler(link), indicator: "content" };
     }
 
-    return { handler: externalHandler(link), annotate: !!lookupMetadata(link) };
+    var mode = externalMode(link);
+    var indicator = (mode === "archive" || mode === "live") ? "content"
+                  : (mode === "annotation") ? "annotation"
+                  : null;
+    return { handler: externalHandler(link), indicator: indicator };
   }
 
   function bind(link) {
@@ -233,7 +280,7 @@
       return;
     }
     if (!info || !info.handler) return;
-    if (info.annotate) link.classList.add("popover-annotated");
+    try { applyIndicator(link, info.indicator); } catch (e) { /* cosmetic only - still bind the popover */ }
 
     if (isTouch) {
       link.addEventListener("click", function (e) {
@@ -262,7 +309,12 @@
 
   function init() {
     buildContainer();
-    bindWithin(document.querySelector(".page__content") || document.body);
+    // the page's own content only - never document.body, or the masthead nav
+    // (Home/Publications/Blog) and footer get popovers too. Archive-layout
+    // pages (publications, mlmonad) have no .page__content; their content
+    // lives in .archive instead.
+    var content = document.querySelector(".page__content") || document.querySelector(".archive");
+    if (content) bindWithin(content);
     var authorUrls = document.querySelectorAll(".author__urls");
     for (var i = 0; i < authorUrls.length; i++) bindWithin(authorUrls[i]);
 

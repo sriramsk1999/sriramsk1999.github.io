@@ -5,11 +5,14 @@ Guidance for working in this repo (Sriram's personal/academic site).
 ## What this site is
 
 A Jekyll site on the "academicpages" (Minimal Mistakes fork) theme, redesigned in
-gwern.net's visual style. The redesign is **merged to `master` and live** at
-sriramsk1999.github.io — this is no longer a branch-in-progress. Reference clone of
-gwern.net lives at `/home/sriram.sk/desktop/gwern.net` (sibling directory, not part
-of this repo) — check its actual source (`build/`, `js/`, `css/`) before assuming
-how a gwern feature works; don't guess from memory of the live site.
+gwern.net's visual style. 
+
+**gwern.net source**: Before assuming how a gwern feature works, sparse-clone his source
+into the scratchpad and read it — don't guess from memory of the live site:
+`git clone --depth 1 --filter=blob:none --sparse https://github.com/gwern/gwern.net.git gw && git -C gw sparse-checkout set css js build`.
+Useful entry points: `css/initial.css` ("Fancy link underlining"), `css/links.css`
+(link indicators, link icons), `js/extracts.js` + `js/extracts-*.js` (popup target
+types), `build/` (Hakyll build, e.g. `LinkArchive.hs`, `Annotation/Arxiv.hs`).
 
 ## Local dev environment
 
@@ -28,12 +31,32 @@ how a gwern feature works; don't guess from memory of the live site.
   Ruby version as evidence of what the *lockfile* supports — nokogiri 1.12.5
   (pinned) requires Ruby `< 3.1`, which is why the Actions workflow is pinned to
   2.7, not 3.2 (this broke CI once; see git history on `.github/workflows/deploy.yml`).
-- No headless browser is available in the assistant's sandbox — large binary
-  downloads (e.g. Playwright's Chromium) get silently truncated here, and this is a
-  sandbox restriction, not a disk/permissions issue worth fighting. Anything needing
-  a real browser (headless Chrome archiving, visual layout verification) has to
-  either wait for a real GitHub Actions run, or be verified by careful reasoning
-  from compiled CSS plus asking the user to check in their browser (Firefox).
+- **Headless Firefox works** (`/usr/bin/firefox`, v159) — use it for visual
+  verification instead of reasoning from compiled CSS. (Downloading a Chromium,
+  e.g. Playwright's, does NOT work: large binary downloads get silently truncated
+  in the sandbox, so `archive_pages.rb`'s headless Chrome is still CI-only.)
+  Gotchas, all hit for real:
+  - Always use a throwaway profile in the scratchpad (`--headless --no-remote
+    --profile <dir>`) so it can't touch the user's running Firefox.
+  - `jekyll build` bakes the production `url` into asset links, so a locally-built
+    page silently loads the *live* site's CSS/JS. Build with
+    `--config _config.yml,<file containing url: "">` for local screenshots.
+  - Minimal Mistakes fades page content in with a CSS `intro` animation, and
+    `--screenshot` fires before it runs → blank content area. Disable it in the
+    throwaway profile: `toolkit.legacyUserProfileCustomizations.stylesheets` in
+    `user.js` + `chrome/userContent.css` with `animation: none !important`.
+  - `--screenshot` ignores `layout.css.devPixelsPerPx`; to inspect fine detail,
+    crop and upscale with `magick ... -filter point -resize 800%`.
+  - For computed styles/measurements, `--screenshot` can't run JS for you: serve
+    a page that iframes the site and POSTs `getComputedStyle`/`getBoundingClientRect`
+    results to a tiny local Python server, then exits. Same pattern renders
+    three.js scenes frame-by-frame (`canvas.toDataURL()` right after `render()`)
+    — that's how `images/vgp-orbit.gif` was made from the VGP project page's viewer.
+- `jekyll serve --incremental` (how the user runs it) does **not** regenerate pages
+  when `_data/*.json` changes. Every page embeds the popover data inline, so new
+  hover metadata looks "broken" until the server is restarted — this was reported
+  as missing previews several times in one session. Tell the user to restart
+  without `--incremental` rather than debugging the links.
 
 ## This repo has two git remotes
 
@@ -54,8 +77,15 @@ staging step. After pushing, watch the run rather than assuming success:
 and pull failure logs with `gh run view <id> -R <repo> --log-failed` if it's red.
 The workflow also runs `_scripts/fetch_link_metadata.rb` and `_scripts/archive_pages.rb`
 before building, and commits back anything they produce as a `github-actions[bot]`
-commit — `git pull`/`fetch` after a green run if you need what it generated (real
-snapshots/metadata only exist after a live CI run; this sandbox can't produce them).
+commit — `git pull`/`fetch` after a green run if you need what it generated.
+`fetch_link_metadata.rb` is plain HTTP and **can** be run locally
+(`/usr/bin/ruby-2.7 -S bundle exec ruby-2.7 _scripts/fetch_link_metadata.rb`;
+incremental, only fetches URLs not already cached) — do that after adding links so
+the user's local preview works immediately. Page snapshots (`archive_pages.rb`,
+headless Chrome) still only exist after a live CI run. Known gap: `frameable?()`
+only checks headers, so a host serving an error page without `X-Frame-Options`
+(e.g. a GitHub Pages 404 while a co-author's site is down) is recorded as
+embeddable, and the popover iframes the error page until the site returns.
 
 ## Design direction
 
@@ -67,6 +97,40 @@ snapshots/metadata only exist after a live CI run; this sandbox can't produce th
   (not just on hover — grayscale text needs the underline for contrast against
   body copy). A blue/no-default-underline variant was tried and explicitly
   reverted — don't reintroduce it without being asked again.
+- **The underline is gwern's background-gradient technique, not `text-decoration`**
+  (`.page__content a` in `_sass/_page.scss`, ported from gwern's `css/initial.css`):
+  a 1px `linear-gradient` at `background-position: 0 calc(100% - 0.1em)`, plus
+  text-shadows in `--link-underline-background-color` that carve gaps around
+  descenders. Don't "simplify" it back to `text-decoration` — the indicator hook
+  below is drawn with the identical position expression so the two meet in a clean
+  corner; text-decoration's position comes from font metrics and can't be matched.
+  Consequences: any container inside `.page__content` with a non-white background
+  must set `--link-underline-background-color` to that background (`.quote-box`
+  does) or the cut-outs show as white halos; `a code` drops its background box
+  (it would paint over the underline); footnote refs opt out with
+  `background-image: none; text-shadow: none`.
+- **Link indicators** (gwern's "pop-frame indicators", `css/links.css`) — set by
+  `classify()` in `assets/js/popovers.js`, styled at the bottom of
+  `_sass/_popovers.scss`. Mutually exclusive, exactly like gwern's (his
+  `Extracts.targetTypeInfo` returns ONE type per link — verified in source):
+  - **"L" indicator hook** (`a.has-indicator-hook` + an injected empty
+    `span.indicator-hook`; gwern's `has-content`): popover shows the content itself
+    — internal page excerpt, local archive, or live iframe.
+  - **Dotted underline** (`a.has-annotation`): popover shows a build-time
+    annotation instead — arXiv abstract or scraped metadata card.
+  - **Plain solid underline**: nothing useful to preview (openreview, LinkedIn).
+  For external links, `externalMode()` is the single source of truth for both the
+  popover content and the indicator — add a new popover source there, not in
+  `externalHandler`/`classify` separately, or the indicator will lie. The hook only
+  goes on links inside `.page__content` that have visible text (not image-only
+  links), and a U+2060 WORD JOINER is prepended to the link's first text node so the
+  tick can't wrap away from the first word (gwern's trick — it must go into the
+  existing text node, not a new one). Archive-layout pages (publications, mlmonad)
+  have no `.page__content`, so their links keep the plain `.archive a` underline
+  and get no indicators.
+  - Drop-cap gotcha, currently latent: no page opens its drop-cap paragraph with a
+    link. If one ever does, the hook span + U+2060 sit exactly where `::first-letter`
+    looks — check it in Firefox before shipping.
 - Drop caps on the opening paragraph of `.page__content`, sized up and bold —
   "fancier" was an explicit ask. The small-caps opening-flourish is done by
   `assets/js/dropcap.js`, wrapping a fixed word budget in real `<span>`s at
@@ -83,14 +147,25 @@ snapshots/metadata only exist after a live CI run; this sandbox can't produce th
   an optional `page.seo_title` front-matter field over `page.title` for the
   `<title>` tag specifically, so a page's H1 and its browser-tab title can differ
   (used on the About page: H1 "Sriram Krishna", tab title "Home - Sriram Krishna").
+- **About-page quotes** live in `quotes.js` at the repo root (not `assets/js/`).
+  Attribution style is a deliberate per-quote choice, not a uniform rule: fictional
+  speakers are credited as the character plus the work, with no author (`Dalinar
+  Kholin, <em>Oathbringer</em>`, `Oikawa Tōru, <em>Haikyū!!</em>`); everything else
+  is author plus work; no translator credits; the Blue Lantern oath is just "Blue
+  Lantern Oath". Book titles go in `<em>` (the cite line is `font-style: normal`),
+  poems/stories in curly quotes, scripture as plain citation (`Bhagavad Gita 2.47`).
 
 ## Popovers (`assets/js/popovers.js`, `_sass/_popovers.scss`)
 
 A from-scratch, small vanilla-JS engine inspired by gwern's `Popups`/`Extracts`
 architecture, not vendored from gwern.net directly (that code is ~5000+ lines
 tightly coupled to Hakyll's build and a curated annotation database this site
-doesn't have). Binds to `.page__content a[href]` and `.author__urls a[href]`
-(sidebar social icons) — extend that selector, don't bind `a[href]` site-wide.
+doesn't have). Binds to `.page__content a[href]` (or `.archive a[href]` on
+archive-layout pages like publications, which have no `.page__content`) and
+`.author__urls a[href]` (sidebar social icons) — extend that selector, don't bind
+`a[href]` site-wide. It used to fall back to `document.body` on archive pages,
+which put popovers on the masthead nav (Home/Publications/Blog) — reported and
+fixed; never fall back to body.
 Dynamically-injected content (e.g. the About-page quote widget) must call
 `window.GW_popovers.bindWithin(container)` after rendering, or its links never
 get bound — popovers.js only scans the DOM once at load.

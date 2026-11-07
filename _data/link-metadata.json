@@ -47,6 +47,21 @@
     "description": "Due to the falling costs of data acquisition and storage, researchers and industry analysts often want to find all instances of rare events in large datasets. For instance, scientists can cheaply capture thousands of hours of video, but are limited by the need to manually inspect long videos to identify relevant objects and events. To reduce this cost, recent work proposes to use cheap proxy models, such as image classifiers, to identify an approximate set of data points satisfying a data selection filter. Unfortunately, this recent work does not provide the statistical accuracy guarantees necessary in scientific and production settings. In this work, we introduce novel algorithms for approximate selection queries with statistical accuracy guarantees. Namely, given a limited number of exac",
     "favicon": "https://arxiv.org/favicon.ico"
   },
+  "https://arxiv.org/abs/2010.05494": {
+    "title": "Genetic Bi-objective Optimization Approach to Habitability Score",
+    "description": "The search for life outside the Solar System is an endeavour of astronomers all around the world. With hundreds of exoplanets being discovered due to advances in astronomy, there is a need to classify the habitability of these exoplanets. This is typically done using various metrics such as the Earth Similarity Index or the Planetary Habitability Index. In this paper, Genetic Algorithms are used to evaluate the best possible habitability scores using the Cobb-Douglas Habitability Score. Genetic Algorithm is a classic evolutionary algorithm used for solving optimization problems. It is based on Darwin's theory of evolution, \"Survival of the fittest\". The working of the algorithm is established through comparison with various benchmark functions and extended its functionality to Multi-Object",
+    "favicon": "https://arxiv.org/favicon.ico"
+  },
+  "https://arxiv.org/abs/2010.13197": {
+    "title": "Gestop : Customizable Gesture Control of Computer Systems",
+    "description": "The established way of interfacing with most computer systems is a mouse and keyboard. Hand gestures are an intuitive and effective touchless way to interact with computer systems. However, hand gesture based systems have seen low adoption among end-users primarily due to numerous technical hurdles in detecting in-air gestures accurately. This paper presents Gestop, a framework developed to bridge this gap. The framework learns to detect gestures from demonstrations, is customizable by end-users and enables users to interact in real-time with computers having only RGB cameras, using gestures.",
+    "favicon": "https://arxiv.org/favicon.ico"
+  },
+  "https://arxiv.org/abs/2012.15565": {
+    "title": "Searching a Raw Video Database using Natural Language Queries",
+    "description": "The number of videos being produced and consequently stored in databases for video streaming platforms has been increasing exponentially over time. This vast database should be easily index-able to find the requisite clip or video to match the given search specification, preferably in the form of a textual query. This work aims to provide an end-to-end pipeline to search a video database with a voice query from the end user. The pipeline makes use of Recurrent Neural Networks in combination with Convolutional Neural Networks to generate captions of the video clips present in the database.",
+    "favicon": "https://arxiv.org/favicon.ico"
+  },
   "https://arxiv.org/abs/2103.10730": {
     "title": "MuRIL: Multilingual Representations for Indian Languages",
     "description": "India is a multilingual society with 1369 rationalized languages and dialects being spoken across the country (INDIA, 2011). Of these, the 22 scheduled languages have a staggering total of 1.17 billion speakers and 121 languages have more than 10,000 speakers (INDIA, 2011). India also has the second largest (and an ever growing) digital footprint (Statista, 2020). Despite this, today's state-of-the-art multilingual systems perform suboptimally on Indian (IN) languages. This can be explained by the fact that multilingual language models (LMs) are often trained on 100+ languages together, leading to a small representation of IN languages in their vocabulary and training data. Multilingual LMs are substantially less effective in resource-lean scenarios (Wu and Dredze, 2020; Lauscher et al., 2",
@@ -65,6 +80,21 @@
   "https://arxiv.org/abs/2506.09068": {
     "title": "BG-HOP: A Bimanual Generative Hand-Object Prior",
     "description": "In this work, we present BG-HOP, a generative prior that seeks to model bimanual hand-object interactions in 3D. We address the challenge of limited bimanual interaction data by extending existing single-hand generative priors, demonstrating preliminary results in capturing the joint distribution of hands and objects. Our experiments showcase the model's capability to generate bimanual interactions and synthesize grasps for given objects. We make code and models publicly available.",
+    "favicon": "https://arxiv.org/favicon.ico"
+  },
+  "https://arxiv.org/abs/2606.30749": {
+    "title": "From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation",
+    "description": "Large-scale dexterous grasp datasets encode rich priors over hand-object interaction, but their use has largely been confined to grasp generation and pick-and-place manipulation. We study whether such data can instead support functional dexterity in articulated tool use, where a robot must acquire a tool, maintain contact, and operate its functional moving parts. We adapt a hierarchical imitation learning framework that combines high-level hand sub-goal prediction with a low-level goal-conditioned controller. We construct a 355k-trajectory grasp-pretraining dataset from large-scale dexterous grasp annotations and use it to pretrain the low-level controller. The controller is then fine-tuned on downstream task demonstrations. To evaluate this setting, we introduce DexCraft, a simulation ben",
+    "favicon": "https://arxiv.org/favicon.ico"
+  },
+  "https://arxiv.org/abs/2609.24778": {
+    "title": "H2RBench: A Real-to-Sim Benchmark for Evaluating Human-to-Robot Transfer",
+    "description": "Learning robot manipulation policies from human video demonstrations constitutes a promising avenue for scalable robot learning. However, comparing different human-to-robot (H2R) transfer methods remains challenging, as existing approaches are evaluated under different settings, including differing task suites, scene layouts, object instances, and amounts of robot supervision. To address this challenge, we present H2RBench, a Real2Sim benchmark for evaluating H2R transfer methods. H2RBench provides a standardized protocol built on real human video demonstrations and simulated robot demonstrations, and includes four manipulation tasks spanning diverse interaction requirements. We evaluate multiple representative H2R transfer methods, each adopting a different strategy for bridging the embod",
+    "favicon": "https://arxiv.org/favicon.ico"
+  },
+  "https://arxiv.org/abs/2609.32762": {
+    "title": "An Empirical Study on What Matters for Viewpoint-Generalizable Policies in Visual Imitation Learning",
+    "description": "Visual imitation learning is a promising approach to training robot manipulation policies capable of completing a wide variety of tasks. However, policies today remain brittle to viewpoint perturbations, making deployment in diverse environments a challenge. We present a controlled empirical study of which design choices allow visuomotor policies to generalize across viewpoints. We find that viewpoint generalization improves when dense visual tokens are retained and the action head participates in geometric reasoning. On a suite of simulated tasks that span a wide range of camera poses, we show that these design choices yield a policy that remains performant across viewpoints. As a practical consequence, a policy trained with these design choices also transfers zero-shot from simulation to",
     "favicon": "https://arxiv.org/favicon.ico"
   },
   "https://arxiv.org/pdf/1607.04606.pdf": {
@@ -90,6 +120,9 @@
     "description": "We build and maintain an open repository of web crawl data that can be accessed and analyzed by anyone.",
     "favicon": "https://cdn.prod.website-files.com/6479b8d98bf5dcb4a69c4f31/648962712d8394e5aa35ead4_Common_Crawl_Rev3_LPX_White%20Icon%20(1).png"
   },
+  "https://corl2026-realworld-robot-learning.github.io/": {
+    "title": "From GPU-Accelerated Simulation to Scalable and Generalizable Real Robot Policy Learning | CoRL 2026 Workshop"
+  },
   "https://cse.buffalo.edu/~changyou/": {
     "title": "Home ←"
   },
@@ -104,10 +137,24 @@
   "https://davheld.github.io/": {
     "title": "David Held"
   },
+  "https://davidz2851.github.io/h2rbench.github.io/": {
+    "title": "H2RBench: A Real-to-Sim Benchmark for Evaluating Human-to-Robot Transfer",
+    "description": "H2RBench: A Real-to-Sim Benchmark for Evaluating Human-to-Robot Transfer"
+  },
   "https://dl.acm.org/doi/10.1145/37402.37422": {
     "title": "Marching cubes: A high resolution 3D surface construction algorithm | ACM SIGGRAPH Computer Graphics",
     "description": "We present a new algorithm, called marching cubes, that creates triangle models of constant density surfaces from 3D medical data. Using a divide-and-conquer approach to generate inter-slice connectivity, we create a case table that defines triangle ...",
     "favicon": "https://dl.acm.org/pb-assets/head-metadata/favicon-32x32-1574252172003.png"
+  },
+  "https://docs.google.com/presentation/d/1D2Dw7hx3EefZzVsVqOL9qiBW456-9qSygmvd_gznfNk": {
+    "title": "Gestop",
+    "description": "Gestop Customizable Gesture Control of Computer Systems",
+    "favicon": "https://ssl.gstatic.com/docs/presentations/images/favicon-2026-v2.ico"
+  },
+  "https://docs.google.com/presentation/d/1JO70jWLZRhNhDDVEmmMfJoF_OiKshJDrdB0Ap1WSCrc": {
+    "title": "DeepSmooth-CVPRW-VOCVALC23",
+    "description": "DeepSmooth: Efficient and Smooth Depth Completion VOCVALC 2023 Sriram Krishna Samsung Research Bangalore, India sriram.sk@samsung.com Basavaraja Shanthappa Vandrotti Samsung Research Bangalore, India b.vandrotti@samsung.com",
+    "favicon": "https://ssl.gstatic.com/docs/presentations/images/favicon-2026-v2.ico"
   },
   "https://docs.mathjax.org/en/latest/": {
     "title": "MathJax Documentation — MathJax 4.0 documentation"
@@ -154,6 +201,11 @@
     "description": "Marching cubes with and without color interpolation, and edge subsampling. - JustusThies/PyMarchingCubes",
     "favicon": "https://github.githubassets.com/favicons/favicon.svg"
   },
+  "https://github.com/YingYuan0414/DexCraft": {
+    "title": "GitHub - YingYuan0414/DexCraft",
+    "description": "Contribute to YingYuan0414/DexCraft development by creating an account on GitHub.",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
   "https://github.com/academicpages/academicpages.github.io/commits/master": {
     "title": "Commits · academicpages/academicpages.github.io",
     "description": "Github Pages template based upon HTML and Markdown for personal, portfolio-based websites. - Commits · academicpages/academicpages.github.io",
@@ -179,14 +231,34 @@
     "description": "Learning about volumetric fusion. Contribute to kevinzakka/learn-volumetric-fusion development by creating an account on GitHub.",
     "favicon": "https://github.githubassets.com/favicons/favicon.svg"
   },
+  "https://github.com/midas-research/Improvement-and-Estimation-of-Automated-Scoring-Systems-Performance-with-Guarantees": {
+    "title": "GitHub - midas-research/Improvement-and-Estimation-of-Automated-Scoring-Systems-Performance-with-Guarantees: Implementation of the paper titled \"Using Sampling to Estimate and Improve Performance of Automated Scoring Systems with Guarantees\"",
+    "description": "Implementation of the paper titled &quot;Using Sampling to Estimate and Improve Performance of Automated Scoring Systems with Guarantees&quot; - midas-research/Improvement-and-Estimation-of-Automat...",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
   "https://github.com/ofnote/gestop": {
     "title": "GitHub - ofnote/gestop: A tool to navigate the desktop with hand gestures. Builds on mediapipe.",
     "description": "A tool to navigate the desktop with hand gestures. Builds on mediapipe. - ofnote/gestop",
     "favicon": "https://github.githubassets.com/favicons/favicon.svg"
   },
+  "https://github.com/r-pad/ghost": {
+    "title": "GitHub - r-pad/ghost: Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation",
+    "description": "Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation - r-pad/ghost",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
+  "https://github.com/r-pad/lfd3d": {
+    "title": "GitHub - r-pad/ghost: Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation",
+    "description": "Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation - r-pad/ghost",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
   "https://github.com/sriramsk1999": {
     "title": "sriramsk1999 - Overview",
     "description": "MS Robotics @ CMU. sriramsk1999 has 32 repositories available. Follow their code on GitHub.",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
+  "https://github.com/sriramsk1999/bghop": {
+    "title": "GitHub - sriramsk1999/bghop",
+    "description": "Contribute to sriramsk1999/bghop development by creating an account on GitHub.",
     "favicon": "https://github.githubassets.com/favicons/favicon.svg"
   },
   "https://github.com/sriramsk1999/frlove": {
@@ -199,10 +271,25 @@
     "description": "Submission for the Multilingual Abusive Comment Identification Challenge on Kaggle - sriramsk1999/moj-abusive-detection",
     "favicon": "https://github.githubassets.com/favicons/favicon.svg"
   },
+  "https://github.com/sriramsk1999/video-database-search": {
+    "title": "GitHub - sriramsk1999/video-database-search: Neural network to caption videos, deployed as a web application to search through videos using natural language queries.",
+    "description": "Neural network to caption videos, deployed as a web application to search through videos using natural language queries. - sriramsk1999/video-database-search",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
+  "https://github.com/xiaochy/H2RBench": {
+    "title": "GitHub - xiaochy/H2RBench: [CoRL 2026] H2RBench: A Real-to-Sim Benchmark for Evaluating Human-to-Robot Transfer",
+    "description": "[CoRL 2026] H2RBench: A Real-to-Sim Benchmark for Evaluating Human-to-Robot Transfer - xiaochy/H2RBench",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg"
+  },
   "https://gutenberg.org/": {
     "title": "Project Gutenberg",
     "description": "Project Gutenberg is a library of free eBooks.",
     "favicon": "https://gutenberg.org/gutenberg/favicon.ico"
+  },
+  "https://haotianzhan.github.io/": {
+    "title": "Haotian Zhan",
+    "description": "MS Robotics student at Carnegie Mellon University working on robotic manipulation and learning from human demonstrations.",
+    "favicon": "https://haotianzhan.github.io/images/favicon.svg"
   },
   "https://haoyuzhen.com/": {
     "title": "Haoyu Zhen",
@@ -343,6 +430,11 @@
     "description": "PhD @CMU_Robotics",
     "favicon": "https://twitter.com/favicon.ico"
   },
+  "https://vgp-sim2real.github.io/": {
+    "title": "An Empirical Study on What Matters for Viewpoint-Generalizable Policies in Visual Imitation Learning",
+    "description": "A controlled study of what makes visuomotor policies robust to camera viewpoint, distilled into ∀GP and transferred zero-shot from simulation to a real robot under random cameras.",
+    "favicon": "https://vgp-sim2real.github.io/assets/favicon.svg"
+  },
   "https://wandb.ai/site": {
     "title": "Weights & Biases: The AI Developer Platform",
     "description": "Learn why thousands of companies rely on W&B as their system of record for training AI models and developing AI applications with confidence.",
@@ -392,6 +484,11 @@
     "title": "NIH Chest X-rays",
     "description": "Over 112,000 Chest X-ray images from more than 30,000 unique patients",
     "favicon": "https://www.kaggle.com/static/images/favicon.ico"
+  },
+  "https://www.linkedin.com/in/nakuram/": {
+    "title": "Mino Nakura - Index Robotics | LinkedIn",
+    "description": "Experience: Index Robotics · Education: Carnegie Mellon University · Location: Bellevue · 500+ connections on LinkedIn. View Mino Nakura’s profile on LinkedIn, a professional community of 1 billion members.",
+    "favicon": "https://static.licdn.com/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca"
   },
   "https://www.linkedin.com/in/niharika-p-b5b131170/": {
     "title": "Niharika P. - New Relic | LinkedIn",
@@ -445,7 +542,32 @@
     "description": "Vox is a general interest news site for the 21st century. Its mission: to help everyone understand our complicated world, so that we can all help shape it. In text, video and audio, our reporters explain politics, policy, world affairs, technology, culture, science, the climate crisis, money, health",
     "favicon": "https://www.vox.com/static-assets/icons/favicon-32x32.png"
   },
+  "https://www.youtube.com/watch?v=K2UkIjK7BTI": {
+    "title": "Gestop: Customizable Gesture Control of Computer Systems",
+    "description": "Video demo for `Gestop: Customizable Gesture Control of Computer Systems`.Source code: https://github.com/ofnote/gestop/",
+    "favicon": "https://www.youtube.com/s/desktop/4e57be2c/img/favicon_32x32.png"
+  },
+  "https://xiaochy.github.io/": {
+    "title": "Chuyang(Vera) Xiao",
+    "favicon": "https://xiaochy.github.io/images/favicon-32x32.png"
+  },
   "https://yingyuan0414.github.io/": {
     "title": "Ying Yuan's Homepage"
+  },
+  "https://yingyuan0414.github.io/grasp2dexterity/": {
+    "title": "From Grasps to Dexterity"
+  },
+  "https://zackory.com/": {
+    "title": "Zackory Erickson"
+  },
+  "https://zakharos.github.io/": {
+    "title": "Sergey Zakharov | about",
+    "description": "Sergey Zakharov - Senior Research Scientist at Toyota Research Institute. Research in 3D reconstruction, generative modeling, and robotics.",
+    "favicon": "https://zakharos.github.io/assets/img/favicon.ico?b21eb6da380f77c7a06c03687a8fde09"
+  },
+  "https://zubairirshad.com/": {
+    "title": "Zubair Irshad",
+    "description": "Zubair Irshad. Research Scientist at Toyota Research Institute | Georgia Tech PhD | Fulbright Scholar. My research interests lie in Artificial Intelligence, Computer Vision and Deep Learning.",
+    "favicon": "https://zubairirshad.com/images/zi_icon.png"
   }
 }

@@ -111,3 +111,65 @@
     font-style: italic;
   }
 }
+
+/* ==========================================================================
+   POP-FRAME INDICATORS
+   Ported from gwern.net css/links.css. They tell the reader, before
+   hovering, what a link's popover holds - set by classify() in popovers.js.
+   Mutually exclusive, exactly like gwern's (his extracts.js assigns each link
+   ONE target type, first match wins):
+   - .has-indicator-hook: the popover shows the linked content itself
+     (internal page excerpt, local archive, live iframe) -> a short vertical
+     tick at the link's left end that joins the underline, forming an "L".
+     gwern's `has-content`.
+   - .has-annotation: the popover shows a build-time annotation instead
+     (arXiv abstract, scraped title/description card) -> dotted underline,
+     no hook.
+   - neither: nothing worth hovering for -> plain solid underline.
+   Both depend on the background-gradient underline in _page.scss.
+   ========================================================================== */
+
+.page__content a.has-indicator-hook {
+  margin-left: 0.1em;
+  position: relative;
+  z-index: 1;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+
+  .indicator-hook {
+    position: relative;
+    padding-left: 0.3em;
+
+    /* three stacked backgrounds, first on top: two background-colored masks
+       hide the top 0.6em and the bottom 0.1em of a full-height line, leaving
+       a stub whose bottom sits at calc(100% - 0.1em) - the same position
+       expression as the underline, so both round to the same pixel row */
+    &::before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background-image:
+        linear-gradient(var(--link-underline-background-color), var(--link-underline-background-color)),
+        linear-gradient(var(--link-underline-background-color), var(--link-underline-background-color)),
+        linear-gradient(currentColor, currentColor);
+      background-size:
+        1px 0.6em,
+        1px 0.1em,
+        1px 1em;
+      background-position:
+        0 0,
+        0 100%,
+        0 calc(100% - 0.1em);
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.page__content a.has-annotation {
+  background-image: linear-gradient(to right, currentColor 50%, var(--link-underline-background-color) 50%);
+  background-size: 2px 1px;
+}

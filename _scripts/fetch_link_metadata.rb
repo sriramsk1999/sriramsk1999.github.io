@@ -41,9 +41,24 @@ def collect_urls
         url = md || html
         urls << url if url
       end
+      urls.concat(front_matter_urls(text))
     end
   end
   (urls + social_profile_urls).uniq
+end
+
+# Publications (and talks) keep their links in front matter as bare URLs
+# (`paperurl:`, `code:`, `website:`, `slides:`, `youtube:`...) that
+# _pages/publications.html turns into <a> tags at build time - LINK_RE never
+# sees them, so the publications page's paper/code/website links silently got
+# no preview. Any front-matter value that is entirely a URL counts.
+FRONT_MATTER_RE = /\A---\s*\n(.*?)\n---\s*$/m.freeze
+FRONT_MATTER_URL_RE = /^[\w-]+:\s*["']?(https?:\/\/[^\s"']+)["']?\s*$/.freeze
+
+def front_matter_urls(text)
+  fm = text[FRONT_MATTER_RE, 1]
+  return [] unless fm
+  fm.scan(FRONT_MATTER_URL_RE).flatten
 end
 
 # The sidebar's social icons (github/linkedin/twitter/...) are built by

@@ -73,15 +73,55 @@
     }
   }
 
+  /* gwern-style link underline (gwern.net css/initial.css "Fancy link
+     underlining", itself from Tufte CSS): a 1px background-image gradient
+     instead of text-decoration, plus text-shadows in the background color that
+     carve gaps around descenders (g, y, p...). It has to be a background, not
+     text-decoration: the popover indicator hook (_popovers.scss) is drawn with
+     the exact same background-position math so the two meet in a clean "L"
+     corner, and text-decoration's position comes from font metrics that CSS
+     can't line anything else up against.
+     --link-underline-background-color must match whatever is actually behind
+     the link, or the descender cut-outs show as halos (see .quote-box). */
+  --link-underline-background-color: #{$background-color};
+
   a {
     color: $link-color;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 1px 1px;
+    background-repeat: repeat-x;
+    background-position: 0% calc(100% - 0.1em);
+    /* oldstyle numerals dip below the baseline into the underline */
+    font-variant-numeric: lining-nums;
+
+    &,
+    * {
+      text-shadow:
+         0      0.05em var(--link-underline-background-color),
+         0.05em 0.05em var(--link-underline-background-color),
+        -0.05em 0.05em var(--link-underline-background-color),
+         0.17em 0.05em var(--link-underline-background-color),
+        -0.17em 0.05em var(--link-underline-background-color),
+         0.17em 0      var(--link-underline-background-color),
+        -0.17em 0      var(--link-underline-background-color);
+    }
+
+    /* those white shadows smear into blobs over the dark selection highlight
+       (_reset.scss) - gwern's initial.css has the same override. Must stay a
+       separate rule per pseudo: ::selection and ::-moz-selection in one
+       selector list is dropped entirely by any browser not knowing either. */
+    &::selection,
+    *::selection {
+      text-shadow: none;
+    }
+    &::-moz-selection,
+    *::-moz-selection {
+      text-shadow: none;
+    }
 
     &:hover {
       color: $link-color-hover;
-      text-decoration: underline;
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);
@@ -90,6 +130,13 @@
 
     &:visited {
       color: $link-color-visited;
+    }
+
+    /* inline code's own background box would paint over the underline */
+    code {
+      background: transparent;
+      border: none;
+      box-shadow: none;
     }
   }
 
@@ -125,6 +172,8 @@
     font-size: 0.8em;
     text-decoration: none;
     border-bottom: none;
+    background-image: none;
+    text-shadow: none;
 
     &:hover {
       text-decoration: underline;
@@ -172,6 +221,41 @@
   }
 }
 
+/* About-page News list (tagged via kramdown IAL `{: .news-list}` in
+   _pages/about.md): a fixed-height scroll panel showing roughly the five most
+   recent items. Deliberately no box or border - the only affordance is a
+   faint scroll shadow, which appears at an edge only when there's more content
+   beyond it (Lea Verou's background-attachment trick: the white "covers"
+   scroll with the content (local) and hide the shadows (scroll) once you reach
+   that end). No JS. */
+.news-list {
+  max-height: 27em; /* just past the 5th item at desktop width - measured, re-check if items change a lot */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $light-gray transparent;
+  background-color: $background-color;
+  background-image:
+    linear-gradient($background-color 30%, rgba($background-color, 0)),
+    linear-gradient(rgba($background-color, 0), $background-color 70%),
+    radial-gradient(farthest-side at 50% 0, rgba(#000, 0.08), rgba(#000, 0)),
+    radial-gradient(farthest-side at 50% 100%, rgba(#000, 0.08), rgba(#000, 0));
+  background-position: top, bottom, top, bottom;
+  background-size: 100% 2.5em, 100% 2.5em, 100% 0.8em, 100% 0.8em;
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll;
+
+  /* a blank line inside an item (e.g. a closing line after a sub-list) makes
+     kramdown wrap it in <p>, whose margins would space it unlike the rest */
+  li > p {
+    margin: 0.3em 0 0;
+  }
+
+  @media print {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
 /* quote-of-the-day widget (About page) */
 .quote-box {
   position: relative;
@@ -179,6 +263,8 @@
   padding: 1.2em 2.6em 1.2em 1.4em;
   border: 1px solid $border-color;
   background: $code-background-color;
+  /* the link underline's descender cut-outs are painted in this color */
+  --link-underline-background-color: #{$code-background-color};
   border-radius: $border-radius;
 
   &__text {
