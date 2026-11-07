@@ -44,8 +44,17 @@ def collect_urls
       urls.concat(front_matter_urls(text))
     end
   end
+  # Content that lives outside CONTENT_DIRS but is rendered into pages: the
+  # About-page quote widget's quotes (with links) are in quotes.js at the repo
+  # root, so e.g. its Sefaria link silently never got a preview.
+  EXTRA_CONTENT_FILES.each do |path|
+    next unless File.file?(path)
+    File.read(path, encoding: "UTF-8").scan(LINK_RE) { |md, html| urls << (md || html) if md || html }
+  end
   (urls + social_profile_urls).uniq
 end
+
+EXTRA_CONTENT_FILES = %w[quotes.js].map { |f| File.join(ROOT, f) }.freeze
 
 # Publications (and talks) keep their links in front matter as bare URLs
 # (`paperurl:`, `code:`, `website:`, `slides:`, `youtube:`...) that
@@ -123,7 +132,11 @@ rescue StandardError
   nil
 end
 
-def fetch(url, redirects_left = MAX_REDIRECTS)
+# GET with redirects followed; returns the final Net::HTTPResponse, or nil.
+# Shared by fetch() and frameable?() - the latter used to read headers off the
+# first response, so a host whose root redirects (302/307, which carry no
+# X-Frame-Options) was always judged embeddable regardless of the real page.
+def get_following_redirects(url, redirects_left = MAX_REDIRECTS)
   return nil if redirects_left <= 0
   uri = URI.parse(url)
   return nil unless uri.is_a?(URI::HTTP)
@@ -137,17 +150,21 @@ def fetch(url, redirects_left = MAX_REDIRECTS)
   request["User-Agent"] = USER_AGENT
   response = http.request(request)
 
-  case response
-  when Net::HTTPRedirection
+  if response.is_a?(Net::HTTPRedirection)
     location = response["location"]
     return nil unless location
-    fetch(URI.join(uri, location).to_s, redirects_left - 1)
-  when Net::HTTPSuccess
-    return nil unless response["content-type"].to_s.include?("html")
-    response.body
+    return get_following_redirects(URI.join(uri, location).to_s, redirects_left - 1)
   end
+  response
 rescue StandardError
   nil
+end
+
+def fetch(url)
+  response = get_following_redirects(url)
+  return nil unless response.is_a?(Net::HTTPSuccess)
+  return nil unless response["content-type"].to_s.include?("html")
+  response.body
 end
 
 def resolve(base_url, href)
@@ -190,18 +207,11 @@ end
 # popover is only offered for domains verified not to send those headers -
 # never attempted blindly on arbitrary external links.
 def frameable?(host)
-  uri = URI.parse("https://#{host}")
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
-  http.open_timeout = TIMEOUT_SECONDS
-  http.read_timeout = TIMEOUT_SECONDS
-  request = Net::HTTP::Get.new(uri)
-  request["User-Agent"] = USER_AGENT
-  headers = http.request(request).to_hash
+  response = get_following_redirects("https://#{host}")
+  return false unless response
+  headers = response.to_hash
   csp = Array(headers["content-security-policy"]).join(" ").downcase
   !(headers.key?("x-frame-options") || csp.include?("frame-ancestors"))
-rescue StandardError
-  false
 end
 
 def update_live_domains(urls)

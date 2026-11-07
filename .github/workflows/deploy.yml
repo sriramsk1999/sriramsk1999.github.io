@@ -36,12 +36,20 @@ jobs:
       - name: Archive pages for the local-preview allowlist (skips URLs already archived)
         run: bundle exec ruby _scripts/archive_pages.rb # ubuntu-latest ships Chrome preinstalled
 
+      # `git status --porcelain`, not `git diff --quiet`: archive snapshots and
+      # local-archives.json are brand-new (untracked) files, which `git diff`
+      # ignores - so they were never committed, every deploy re-archived from
+      # scratch, and a flaky archive run would ship without the preview.
+      # live-link-domains.json (frame-policy checks) was also missing here.
+      # Only existing paths go to `git add` - a pathspec matching nothing is a
+      # fatal error (e.g. assets/archive/ when nothing has been archived).
       - name: Commit refreshed link metadata/archives, if any
         run: |
-          if ! git diff --quiet -- _data/link-metadata.json _data/local-archives.json assets/archive; then
+          paths=$(ls -d _data/link-metadata.json _data/live-link-domains.json _data/local-archives.json assets/archive 2>/dev/null || true)
+          if [ -n "$(git status --porcelain -- $paths)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add _data/link-metadata.json _data/local-archives.json assets/archive
+            git add -A -- $paths
             git commit -m "Update external link metadata/archive cache [skip ci]"
             git push
           fi

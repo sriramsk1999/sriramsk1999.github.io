@@ -82,10 +82,21 @@ commit — `git pull`/`fetch` after a green run if you need what it generated.
 (`/usr/bin/ruby-2.7 -S bundle exec ruby-2.7 _scripts/fetch_link_metadata.rb`;
 incremental, only fetches URLs not already cached) — do that after adding links so
 the user's local preview works immediately. Page snapshots (`archive_pages.rb`,
-headless Chrome) still only exist after a live CI run. Known gap: `frameable?()`
-only checks headers, so a host serving an error page without `X-Frame-Options`
-(e.g. a GitHub Pages 404 while a co-author's site is down) is recorded as
-embeddable, and the popover iframes the error page until the site returns.
+headless Chrome) still only exist after a live CI run. The commit-back step uses
+`git status --porcelain` (not `git diff`, which ignores new untracked files - that
+bug meant snapshots were never committed, only rebuilt every deploy).
+
+The script scans `CONTENT_DIRS` (markdown links + `href=`), publication front
+matter (bare `paperurl:`/`code:`/`website:` URLs), and `EXTRA_CONTENT_FILES`
+(`quotes.js`, which renders links but lives at the repo root). If a link "has no
+preview", first check it's actually being collected - three separate gaps like this
+were found. `frameable?()` judges a whole host by its root page, following redirects
+(it used to read the redirect response itself, which never carries
+`X-Frame-Options`, so redirecting hosts were always marked embeddable - an audit
+flipped 4 wrong entries). Known remaining gaps: it's host-level, so one page on a
+host can block framing while the root doesn't; and it only checks headers, so a host
+serving an error page (e.g. a GitHub Pages 404 while a co-author's site is down) is
+recorded as embeddable and the popover shows that error page until the site returns.
 
 ## Design direction
 
