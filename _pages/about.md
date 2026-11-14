@@ -25,11 +25,11 @@ News
 - **[Sep 2026]** - 3 papers accepted at CoRL 2026:
   - [**From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation**](https://yingyuan0414.github.io/grasp2dexterity/)
   - [**H2RBench: A Real-to-Sim Benchmark for Evaluating Human-to-Robot Transfer**](https://davidz2851.github.io/h2rbench.github.io/)
-  - [**An Empirical Study on What Matters for Viewpoint-Generalizable Policies in Visual Imitation Learning**](https://vgp-sim2real.github.io/), at the [From GPU-Accelerated Simulation to Scalable and Generalizable Real Robot Policy Learning workshop](https://corl2026-realworld-robot-learning.github.io/)
+  - [**An Empirical Study on What Matters for Viewpoint-Generalizable Policies in Visual Imitation Learning**](https://vgp-sim2real.github.io/), as a :zap: lightning talk at the [SimBench2Real workshop](https://corl2026-realworld-robot-learning.github.io/)
 
   Congrats to my coauthors!
 - **[Sep 2026]** - Selected as one of seven US PhD researchers for the [French American Doctoral Exchange (FADEx) on Robotics & AI](https://www.linkedin.com/posts/fadex-2026-connecting-the-next-generation-ugcPost-7524245539786256384-keZW/), organized by the Embassy of France in the US!
-- **[Aug 2026]** - Started my PhD at the Robotics Institute, CMU, co-advised by [David Held](https://davheld.github.io) and [Shubham Tulsiani](https://shubhtuls.github.io)!
+- **[Aug 2026]** - Completed my [MSR thesis](https://publications.ri.cmu.edu/hierarchical-sub-goal-policies-for-generalizing-robot-manipulation) and started my PhD at the Robotics Institute, CMU, co-advised by [David Held](https://davheld.github.io) and [Shubham Tulsiani](https://shubhtuls.github.io)!
 - **[Apr 2026]** - Our paper, [**GHOST: Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation**](https://ghost-human-demo.github.io/) was accepted at RSS 2026!
 - **[Jun 2025]** - Our paper, [**BG-HOP: A Bimanual Generative Hand-Object Prior**](https://arxiv.org/abs/2506.09068) was accepted at the [Humans to Robots workshop](https://agents-in-interactions.github.io/) at CVPR 2025.
 - **[Aug 2024]** - Joined the MSR program at CMU!

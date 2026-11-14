@@ -363,6 +363,9 @@
     "title": "PES University – Education for the real world",
     "favicon": "https://pes.edu/favicon/android-icon-192x192.png"
   },
+  "https://publications.ri.cmu.edu/hierarchical-sub-goal-policies-for-generalizing-robot-manipulation": {
+    "title": "Hierarchical Sub-Goal Policies for Generalizing Robot Manipulation - Robotics Institute Carnegie Mellon University"
+  },
   "https://pypi.org/project/demoji/": {
     "title": "demoji",
     "description": "Accurately remove and replace emojis in text strings",
