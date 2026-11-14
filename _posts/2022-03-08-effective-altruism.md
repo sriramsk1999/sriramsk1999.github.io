@@ -110,11 +110,11 @@ In the interest of my sanity, I will be taking a handwavy approach. The factors 
 Based primarily on my biases, I will assign values along each dimension to the causes. It is left as an exercise to the reader to correct me.
 
 * **Medical aid** - Probably the most straightforward path of effective altruism - save lives by donating to those who save lives. Millions of people in low-income coutries die from preventable diseases like malaria and tuberculosis. Malaria in particular, is infamous as one of humanity's biggest killers. However, it is also preventable/treatable, for small sums of money. [The Malaria Foundation asserts that just 100USD could protect 20 children from malaria](https://www.malariaconsortium.org/pages/donate-usa.htm), which is incredible. A "boring" choice, but perhaps the most important.\
- **HQ**{:.HumanLife} = 0.9, **HQoL**{:.HumanQualityofLife} = 0.0, **MC**{:.MoonshotCauses} = 0.0 \
+ **HL**{:.HumanLife} = 0.9, **HQoL**{:.HumanQualityofLife} = 0.0, **MC**{:.MoonshotCauses} = 0.0 \
 Medical aid $$= 0.54$$ **SIM**.
 
 * **Child Welfare** - Besides helping the next generation of humanity, this has the additional benefit of giving you warm and fuzzy feelings. Changing the trajectory of a child's life may yield outsized benefits in their (and our) future. For example, providing free midday meals to children at schools has the distinction of scoring well on all 3 dimensions of **SIM**. The meals themselves help combat malnourishment, the incentive of food encourages parents to send their children to school, and armed with the opportunities that education provides, there is a chance for people to rise above the circustances of their upbringing and make an impact on the world.\
- **HQ**{:.HumanLife} = 0.5, **HQoL**{:.HumanQualityofLife} = 0.7, **MC**{:.MoonshotCauses} = 0.4 \
+ **HL**{:.HumanLife} = 0.5, **HQoL**{:.HumanQualityofLife} = 0.7, **MC**{:.MoonshotCauses} = 0.4 \
 Child Welfare $$= 0.55$$ **SIM**.
 
 > I am, somehow, less interested in the weight and convolutions of Einstein’s brain than in the near certainty that people of equal talent have lived and died in cotton fields and sweatshops.
@@ -122,7 +122,7 @@ Child Welfare $$= 0.55$$ **SIM**.
 > -Stephen Jay Gould
 
 * **Animal Welfare** - You may have noticed that the metrics I've listed all revolve entirely around humans, with nothing about feeding strays, reforming factory farming etc. I love animals as much as the next guy, but I believe the life of a human (or rather, a sapient being) is simply worth more. Would I save an endangered panda or a human? Obviously, a human. But would I save the last panda on earth or a human? A much harder question, to which I do not have a firm answer. (see below for thoughts on factory farming)\
-**HQ**{:.HumanLife} = 0.0, **HQoL**{:.HumanQualityofLife} = 0.0, **MC**{:.MoonshotCauses} = 0.0 \
+**HL**{:.HumanLife} = 0.0, **HQoL**{:.HumanQualityofLife} = 0.0, **MC**{:.MoonshotCauses} = 0.0 \
 Animal Welfare $$= 0.0$$ **SIM**.
 
 ![A cute generated panda](/images/effective-altruism/baby_panda.jpg)
@@ -130,7 +130,7 @@ Animal Welfare $$= 0.0$$ **SIM**.
 {: .center}
 
 * **Climate Change** - Perhaps the largest threat humanity as a whole faces today is climate change. Political action seems woefully inadequate. To me, the best chances of fighting climate change appear to be technological advancements that change the landscape of what is possible. Energy generation accounts for nearly three-quarters of global greenhouse gas emissions. More efficient solar panels, ways to harvest renewable energy in a cheaper way, room temperature superconductors would go a long way to addressing the issue. A significant chunk of emissions also come from agricultural needs, the raising of crops and livestock. Affordable lab-grown meat has the dual benefit of benefiting both humans and animals, ending inhumane factory farming practices, while providing food at much lower emissions.\
-**HQ**{:.HumanLife} = 0.0, **HQoL**{:.HumanQualityofLife} = 0.2, **MC**{:.MoonshotCauses} = 0.9 \
+**HL**{:.HumanLife} = 0.0, **HQoL**{:.HumanQualityofLife} = 0.2, **MC**{:.MoonshotCauses} = 0.9 \
 Climate change $$= 0.15$$ **SIM**
 
 Some Charities
