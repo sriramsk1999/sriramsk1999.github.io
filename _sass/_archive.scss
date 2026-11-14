@@ -48,6 +48,34 @@
   }
 }
 
+/* Dated entries (blog listing): the date sits right-aligned on the title's
+   first line. The vertical margins move from the h2 to the flex wrapper,
+   since a flex item's margins don't collapse with the excerpt above it. */
+.archive__item-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1em;
+  margin: 2em 0 0.25em;
+
+  .archive__subtitle + .list__item & {
+    margin-top: 0.5em;
+  }
+}
+
+.list__item .archive__item-header .archive__item-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+}
+
+.archive__item-date {
+  flex: none;
+  color: mix(#fff, $gray, 25%);
+  font-family: $sans-serif;
+  font-size: $type-size-6;
+  white-space: nowrap;
+}
+
 /* remove border*/
 .page__content {
 
@@ -89,19 +117,17 @@
    List view
    ========================================================================== */
 
+/* Same 44em measure as .page__content, so listings line up with posts and
+   the About page. (Minimal Mistakes instead reserved a $right-sidebar-width
+   padding gutter here for a TOC column this site doesn't have - it left the
+   blog's text column ~200px narrower than everything else.) .archive__list
+   wraps the blog's year dividers too, so they stop at the same edge. */
+.archive__list,
 .list__item {
-  @include breakpoint($medium) {
-    padding-right: $right-sidebar-width-narrow;
-  }
+  max-width: 44em;
+}
 
-  @include breakpoint($large) {
-    padding-right: $right-sidebar-width;
-  }
-
-  @include breakpoint($x-large) {
-    padding-right: $right-sidebar-width-wide;
-  }
-
+.list__item {
   .page__meta {
     margin: 0 0 4px;
   }
