@@ -322,8 +322,12 @@
       if (e.key === "Escape") hide();
     });
     if (isTouch) {
+      // contains(), not ===: a tap on a link's inner <strong>/<em>/indicator
+      // hook targets that child, and an identity check would hide the popover
+      // the same tap just opened (and reset activeTarget, so the second tap
+      // could never navigate either - bold links were dead on phones)
       document.addEventListener("click", function (e) {
-        if (activeTarget && !container.contains(e.target) && e.target !== activeTarget) hide();
+        if (activeTarget && !container.contains(e.target) && !activeTarget.contains(e.target)) hide();
       });
     }
   }

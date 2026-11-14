@@ -52,6 +52,11 @@ types), `build/` (Hakyll build, e.g. `LinkArchive.hs`, `Annotation/Arxiv.hs`).
     results to a tiny local Python server, then exits. Same pattern renders
     three.js scenes frame-by-frame (`canvas.toDataURL()` right after `render()`)
     — that's how `images/vgp-orbit.gif` was made from the VGP project page's viewer.
+  - To test phone behaviour (popovers.js's tap-to-preview path), make
+    `(hover: none)` match with `user_pref("ui.primaryPointerCapabilities", 1)` and
+    `ui.allPointerCapabilities` 1 in the profile's `user.js`, then dispatch clicks
+    from the iframe harness. Use a *fresh* profile after rebuilding — a reused one
+    served a stale cached `popovers.js` and made a working fix look broken.
 - `jekyll serve --incremental` (how the user runs it) does **not** regenerate pages
   when `_data/*.json` changes. Every page embeds the popover data inline, so new
   hover metadata looks "broken" until the server is restarted — this was reported
